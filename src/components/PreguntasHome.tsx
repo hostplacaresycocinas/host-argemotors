@@ -17,7 +17,7 @@ const PreguntasHome = () => {
   return (
     <section
       id='preguntasSection'
-      className='mt-10 mb-16 md:mt-16 md:mb-24 relative overflow-hidden bg-black'
+      className='mt-10 mb-16 md:mt-16 md:mb-24 relative overflow-hidden'
     >
       {/* Patrón de fondo decorativo para modo oscuro */}
       <div className='absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.02)_1px,transparent_0)] bg-[length:20px_20px]'></div>

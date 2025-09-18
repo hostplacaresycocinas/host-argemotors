@@ -54,7 +54,7 @@ const ContactoPage = () => {
       </section>
 
       {/* Información de contacto principal */}
-      <section className='bg-black'>
+      <section className=''>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16'>
           {/* Sección de redes sociales - Diseño horizontal */}
           <motion.div
@@ -166,50 +166,6 @@ const ContactoPage = () => {
                 </div>
                 <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
               </motion.a>
-            </div>
-          </motion.div>
-
-          {/* Sección de horarios - Diseño vertical */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className='mb-16'
-          >
-            <div className='text-center mb-12'>
-              <h2 className='text-3xl md:text-4xl text-white mb-4 tracking-wide'>
-                Horarios de Atención
-              </h2>
-              <div className='w-16 h-px bg-color-primary mx-auto mb-6'></div>
-              <p className='text-color-text-light text-lg lg:text-xl'>
-                Te esperamos para brindarte la mejor atención
-              </p>
-            </div>
-
-            <div className='max-w-2xl mx-auto'>
-              <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-                {company.openDays.map((day, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className='group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-xl border border-white/10'
-                  >
-                    <div className='p-6 text-center'>
-                      <div className='w-3 h-3 bg-color-primary rounded-full mx-auto mb-3'></div>
-                      <h4 className='text-lg font-semibold text-white mb-1'>
-                        {day.title}
-                      </h4>
-                      <p className='text-color-text-light text-base font-medium'>
-                        {day.time}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
           </motion.div>
 

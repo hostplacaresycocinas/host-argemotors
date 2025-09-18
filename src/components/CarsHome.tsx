@@ -134,7 +134,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
 
   if (loading) {
     return (
-      <section className='flex justify-center w-full bg-color-bg-primary'>
+      <section className='flex justify-center w-full'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
             <div
@@ -158,7 +158,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
 
   if (error) {
     return (
-      <section className='flex justify-center w-full bg-color-bg-primary'>
+      <section className='flex justify-center w-full'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
             <div
@@ -180,7 +180,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
 
   if (vehiculos.length === 0) {
     return (
-      <section className='flex justify-center w-full bg-color-bg-primary'>
+      <section className='flex justify-center w-full'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
             <div
@@ -203,7 +203,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
   }
 
   return (
-    <section className='flex justify-center w-full bg-color-bg-primary'>
+    <section className='flex justify-center w-full'>
       <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
         <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
           <div

@@ -794,11 +794,11 @@ const CatalogoPage = () => {
                     className={`px-4 py-2 rounded relative overflow-hidden transition-all duration-300 ease-in-out ${
                       currentPage === 1
                         ? 'bg-color-primary/50 text-color-title-light cursor-not-allowed opacity-50'
-                        : 'bg-color-primary text-color-title-light hover:bg-color-primary-dark'
+                        : 'bg-color-primary text-color-title hover:bg-color-primary-dark'
                     }`}
                   >
                     <ArrowIcon
-                      className={`w-4 h-4 rotate-180 text-color-title-light transition-opacity duration-300 relative z-10 ${
+                      className={`w-4 h-4 rotate-180 transition-opacity duration-300 relative z-10 ${
                         currentPage === 1 ? 'opacity-50' : 'opacity-100'
                       }`}
                     />
@@ -814,11 +814,11 @@ const CatalogoPage = () => {
                     className={`px-4 py-2 rounded relative overflow-hidden transition-all duration-300 ease-in-out ${
                       currentPage === totalPages
                         ? 'bg-color-primary/50 text-color-title-light cursor-not-allowed opacity-50'
-                        : 'bg-color-primary text-color-title-light hover:bg-color-primary-dark'
+                        : 'bg-color-primary text-color-title hover:bg-color-primary-dark'
                     }`}
                   >
                     <ArrowIcon
-                      className={`w-4 h-4 text-color-title-light transition-opacity duration-300 relative z-10 ${
+                      className={`w-4 h-4 transition-opacity duration-300 relative z-10 ${
                         currentPage === totalPages
                           ? 'opacity-50'
                           : 'opacity-100'
