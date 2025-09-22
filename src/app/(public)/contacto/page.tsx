@@ -83,11 +83,16 @@ const ContactoPage = () => {
                 <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
                   Ubicación
                 </h3>
-                <p className='text-color-text-light mb-4 leading-relaxed'>
-                  {company.adress}
+                <a
+                  href={`${company.googlemapsLink}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-color-text-light mb-4 leading-relaxed hover:text-color-title-light transition-colors'
+                >
+                  {company.adress},
                   <br />
                   {company.city}
-                </p>
+                </a>
               </motion.div>
 
               {/* Contacto */}
@@ -104,12 +109,26 @@ const ContactoPage = () => {
                 <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
                   Contacto
                 </h3>
-                <p className='text-color-text-light mb-2 leading-relaxed'>
-                  {company.whatsapp[0]}
-                </p>
-                <p className='text-color-text-light mb-4 leading-relaxed'>
-                  @{company.instagram}
-                </p>
+                <div>
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-color-text-light mb-2 leading-relaxed hover:text-color-title-light transition-colors'
+                  >
+                    {company.whatsapp[0]}
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href={`https://www.instagram.com/${company.instagram}/`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-color-text-light mb-4 leading-relaxed hover:text-color-title-light transition-colors'
+                  >
+                    @{company.instagram}
+                  </a>
+                </div>
               </motion.div>
 
               {/* Horarios */}
