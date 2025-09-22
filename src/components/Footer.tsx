@@ -15,7 +15,7 @@ import OnlymotorsLogo from './icons/OnlymotorsLogo';
 
 const Footer = () => {
   return (
-    <footer className='relative bg-neutral-950 overflow-hidden'>
+    <footer className='relative bg-gradient-to-b from-neutral-900 to-neutral-950 overflow-hidden'>
       <div className='relative z-10 max-w-7xl mx-auto px-6 lg:px-8'>
         {/* Sección principal */}
         <div className='pt-8 pb-12 md:pt-12 md:pb-16'>
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className='lg:col-span-1'>
               <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
                 Navegación
-                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
+                <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
               <ul className='space-y-4'>
                 {navigation.map((link) => (
@@ -76,7 +76,7 @@ const Footer = () => {
             <div className='lg:col-span-1'>
               <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
                 Contacto
-                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
+                <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
               <div className='space-y-4'>
                 {/* Dirección */}
@@ -139,7 +139,7 @@ const Footer = () => {
             <div className='lg:col-span-1'>
               <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
                 Síguenos
-                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
+                <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
               <div className='space-y-4'>
                 {company.instagram && (
@@ -179,7 +179,7 @@ const Footer = () => {
             <div className='lg:col-span-1'>
               <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
                 Horarios
-                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
+                <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
               <div className='space-y-3'>
                 {company.openDays.map((day) => (
