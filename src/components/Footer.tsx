@@ -54,7 +54,7 @@ const Footer = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 lg:gap-16 mb-8 md:mb-12'>
             {/* Navegación */}
             <div className='lg:col-span-1'>
-              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
+              <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Navegación
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
@@ -74,7 +74,7 @@ const Footer = () => {
 
             {/* Contacto */}
             <div className='lg:col-span-1'>
-              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
+              <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Contacto
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
@@ -137,7 +137,7 @@ const Footer = () => {
 
             {/* Redes sociales */}
             <div className='lg:col-span-1'>
-              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
+              <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Síguenos
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
@@ -177,7 +177,7 @@ const Footer = () => {
 
             {/* Horarios o información adicional */}
             <div className='lg:col-span-1'>
-              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
+              <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Horarios
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
@@ -187,7 +187,7 @@ const Footer = () => {
                     key={day.title}
                     className='text-color-text-light text-base'
                   >
-                    <p className='font-semibold text-color-title-light'>
+                    <p className='font-medium text-color-title-light'>
                       {day.title}
                     </p>
                     <p>{day.time}</p>
