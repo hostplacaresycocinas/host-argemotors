@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import PhoneIcon from '@/components/icons/PhoneIcon';
 import LocationStrokeIcon from '@/components/icons/LocationStrokeIcon';
+import FacebookIcon from '@/components/icons/FacebookIcon';
 
 const ContactoPage = () => {
   return (
@@ -184,7 +185,7 @@ const ContactoPage = () => {
               <div className='w-16 h-px bg-color-primary mx-auto mb-6'></div>
             </div>
 
-            <div className='flex justify-center gap-8'>
+            <div className='flex justify-center gap-5'>
               <motion.a
                 href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
                 target='_blank'
@@ -222,6 +223,29 @@ const ContactoPage = () => {
                   />
                 </div>
               </motion.a>
+
+              {company.facebook ? (
+                <motion.a
+                  href={`${company.facebook}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className='group'
+                >
+                  <div className='w-14 h-14 bg-gradient-to-br from-color-primary-light to-color-primary-dark rounded-full flex items-center justify-center hover:from-color-primary-dark hover:to-color-primary-light transition-all'>
+                    <FacebookIcon
+                      className={`${
+                        company.dark
+                          ? 'text-color-title-light'
+                          : 'text-color-title'
+                      } w-7 h-7`}
+                    />
+                  </div>
+                </motion.a>
+              ) : (
+                ''
+              )}
             </div>
           </motion.div>
 
