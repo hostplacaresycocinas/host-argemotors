@@ -17,7 +17,10 @@ export const company = {
   googlemapsLink: 'https://maps.app.goo.gl/9KUPGPMCrPFP1a4c9',
   googlemaps:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3282.8907902930673!2d-58.5835!3d-34.6322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb92bc4a13e6d%3A0x2546e94d3d641770!2sCacique%20Coliqueo%201041%2C%20B1865%20El%20Palomar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1758234992637!5m2!1ses!2sar',
-  openDays: [{ title: 'Lunes a Sábado', time: 'Con cita previa' }],
+  openDays: [
+    { title: 'Lunes a Viernes', time: '09:00 a 18:30hs' },
+    { title: 'Sábados y Domingos', time: 'Cerrado' },
+  ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -37,33 +40,33 @@ export const metadataCompany = {
 export const preguntas = [
   {
     id: 'preg-1',
-    question: '¿Qué opciones de pago ofrecen?',
+    question: '¿Qué documentación necesito para comprar un vehículo?',
     answer:
-      'Ofrecemos diferentes opciones de pago para adaptarnos a tus necesidades. Consultanos sobre las alternativas disponibles y te asesoramos para encontrar la mejor opción para ti.',
+      'Para la compra de un vehículo necesitás DNI, comprobante de ingresos y domicilio. Te asesoramos sobre todos los requisitos específicos según tu situación particular.',
   },
   {
     id: 'preg-2',
-    question: '¿Cómo verifican el estado de los vehículos?',
+    question: '¿Hacen transferencias de dominio?',
     answer:
-      'Todos nuestros vehículos son revisados antes de ser ofrecidos. Realizamos las verificaciones necesarias para asegurar que estén en las mejores condiciones para nuestros clientes.',
+      'Sí, nos encargamos de todos los trámites de transferencia de dominio. Te acompañamos en el proceso para que sea lo más simple posible.',
   },
   {
     id: 'preg-3',
-    question: '¿Incluyen algún tipo de garantía?',
+    question: '¿Qué servicios adicionales ofrecen?',
     answer:
-      'Sí, nuestros vehículos incluyen garantía según corresponda. Te informamos sobre los términos y condiciones al momento de la compra para tu tranquilidad.',
+      'Además de la venta de vehículos, brindamos asesoramiento personalizado, financiación y acompañamiento en todos los trámites necesarios para tu compra.',
   },
   {
     id: 'preg-4',
-    question: '¿Puedo ver el vehículo antes de decidir?',
+    question: '¿Aceptan vehículos como parte de pago?',
     answer:
-      'Por supuesto, te invitamos a conocer nuestros vehículos personalmente. Coordina una visita con nuestro equipo y te mostramos todo lo que necesites saber.',
+      'Sí, evaluamos tu vehículo actual como parte de pago. Contactanos para coordinar una tasación y conocer las condiciones.',
   },
   {
     id: 'preg-5',
-    question: '¿Brindan asesoramiento después de la compra?',
+    question: '¿Cómo puedo contactarlos?',
     answer:
-      'Sí, nuestro compromiso continúa después de la compra. Estamos disponibles para resolver tus dudas y brindarte el apoyo que necesites con tu vehículo.',
+      'Podés contactarnos por WhatsApp, visitarnos en nuestro local o a través de nuestras redes sociales. Estamos disponibles para resolver todas tus consultas.',
   },
 ];
 

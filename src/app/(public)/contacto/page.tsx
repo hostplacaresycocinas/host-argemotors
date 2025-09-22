@@ -1,7 +1,6 @@
 'use client';
 
 import { company } from '@/app/constants/constants';
-import LocationIcon from '@/components/icons/LocationIcon';
 import InstagramIcon from '@/components/icons/InstagramIcon';
 import WhatsappFillIcon from '@/components/icons/WhatsappFillIcon';
 
@@ -9,6 +8,8 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
+import PhoneIcon from '@/components/icons/PhoneIcon';
+import LocationStrokeIcon from '@/components/icons/LocationStrokeIcon';
 
 const ContactoPage = () => {
   return (
@@ -38,7 +39,7 @@ const ContactoPage = () => {
               company.secondaryColor
                 ? 'text-color-secondary-light'
                 : 'text-color-primary-light'
-            } text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4 lg:mb-6`}
+            } text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4 lg:mb-6 font-anton uppercase tracking-wide`}
           >
             Contacto
           </motion.h1>
@@ -54,9 +55,9 @@ const ContactoPage = () => {
       </section>
 
       {/* Información de contacto principal */}
-      <section className=''>
-        <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16'>
-          {/* Sección de redes sociales - Diseño horizontal */}
+      <section className='py-16 md:py-24'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+          {/* Sección de información principal - Diseño tipo barbershop */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,107 +65,143 @@ const ContactoPage = () => {
             viewport={{ once: true }}
             className='mb-16'
           >
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-              {/* WhatsApp */}
-              <motion.a
-                href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
-                target='_blank'
-                rel='noopener noreferrer'
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative'>
+              {/* Líneas divisoras */}
+              <div className='hidden md:block absolute top-0 bottom-0 left-1/3 w-px bg-gray-600/30'></div>
+              <div className='hidden md:block absolute top-0 bottom-0 right-1/3 w-px bg-gray-600/30'></div>
+              {/* Ubicación */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className='text-center'
+              >
+                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-6'>
+                  <LocationStrokeIcon className='w-9 h-9 text-color-primary' />
+                </div>
+                <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
+                  Ubicación
+                </h3>
+                <p className='text-color-text-light mb-4 leading-relaxed'>
+                  {company.adress}
+                  <br />
+                  {company.city}
+                </p>
+              </motion.div>
+
+              {/* Contacto */}
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className='group relative overflow-hidden bg-gradient-to-br from-color-primary/10 to-color-primary/5 rounded-2xl border border-color-primary/20 hover:border-color-primary/40 hover:scale-105'
+                className='text-center'
               >
-                <div className='p-8 text-center'>
-                  <div className='w-16 h-16 bg-color-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <WhatsappFillIcon
-                      className={`w-8 h-8 ${
-                        company.dark ? 'text-white' : 'text-black'
-                      }`}
-                    />
-                  </div>
-                  <h3
-                    className={`text-white text-xl font-semibold mb-2 group-hover:text-color-primary transition-colors`}
-                  >
-                    WhatsApp
-                  </h3>
-                  <p className='text-color-text-light mb-3'>
-                    {company.whatsapp[0]}
-                  </p>
-                  <p className='text-color-primary font-medium'>
-                    Envia tu consulta
-                  </p>
+                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-6'>
+                  <PhoneIcon className='w-9 h-9 text-color-primary' />
                 </div>
-                <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
-              </motion.a>
+                <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
+                  Contacto
+                </h3>
+                <p className='text-color-text-light mb-2 leading-relaxed'>
+                  {company.whatsapp[0]}
+                </p>
+                <p className='text-color-text-light mb-4 leading-relaxed'>
+                  @{company.instagram}
+                </p>
+              </motion.div>
 
-              {/* Instagram */}
-              <motion.a
-                href={`https://www.instagram.com/${company.instagram}/`}
-                target='_blank'
-                rel='noopener noreferrer'
+              {/* Horarios */}
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className='group relative overflow-hidden bg-gradient-to-br from-color-primary/10 to-color-primary/5 rounded-2xl border border-color-primary/20 hover:border-color-primary/40 hover:scale-105'
+                className='text-center'
               >
-                <div className='p-8 text-center'>
-                  <div className='w-16 h-16 bg-color-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <InstagramIcon
-                      className={`w-8 h-8 ${
-                        company.dark ? 'text-white' : 'text-black'
-                      }`}
-                    />
-                  </div>
-                  <h3
-                    className={`text-white text-xl font-semibold mb-2 group-hover:text-color-primary transition-colors`}
+                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-6'>
+                  <svg
+                    className='w-9 h-9 text-color-primary'
+                    fill='none'
+                    stroke='currentColor'
+                    viewBox='0 0 24 24'
                   >
-                    Instagram
-                  </h3>
-                  <p className='text-color-text-light mb-3'>
-                    @{company.instagram}
-                  </p>
-                  <p className='text-color-primary font-medium'>
-                    Seguinos para novedades
-                  </p>
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
+                    />
+                  </svg>
                 </div>
-                <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
-              </motion.a>
+                <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
+                  Horarios
+                </h3>
+                <div className='space-y-2 text-color-text-light'>
+                  {company.openDays.map((day, index) => (
+                    <div key={index} className='leading-relaxed'>
+                      <span className='font-medium'>{day.title}:</span>{' '}
+                      {day.time}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
 
-              {/* Ubicación */}
+          {/* Sección de redes sociales adicionales */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className='mb-16'
+          >
+            <div className='text-center mb-8'>
+              <h2 className='text-2xl md:text-3xl text-white mb-4 tracking-wide font-anton uppercase'>
+                Seguinos en Redes
+              </h2>
+              <div className='w-16 h-px bg-color-primary mx-auto mb-6'></div>
+            </div>
+
+            <div className='flex justify-center gap-8'>
               <motion.a
-                href={company.googlemapsLink || ''}
+                href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
                 target='_blank'
                 rel='noopener noreferrer'
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className='group relative overflow-hidden bg-gradient-to-br from-color-primary/10 to-color-primary/5 rounded-2xl border border-color-primary/20 hover:border-color-primary/40 hover:scale-105'
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className='group'
               >
-                <div className='p-8 text-center'>
-                  <div className='w-16 h-16 bg-color-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <LocationIcon
-                      className={`w-8 h-8 ${
-                        company.dark ? 'text-white' : 'text-black'
-                      }`}
-                    />
-                  </div>
-                  <h3
-                    className={`text-white text-xl font-semibold mb-2 group-hover:text-color-primary transition-colors`}
-                  >
-                    Ubicación
-                  </h3>
-                  <p className='text-color-text-light mb-3'>
-                    {company.adress}, {company.city}
-                  </p>
-                  <p className='text-color-primary font-medium'>
-                    Ver en Google Maps
-                  </p>
+                <div className='w-14 h-14 bg-color-primary-light rounded-full flex items-center justify-center hover:bg-color-primary-dark transition-colors'>
+                  <WhatsappFillIcon
+                    className={`${
+                      company.dark
+                        ? 'text-color-title-light'
+                        : 'text-color-title'
+                    } w-7 h-7`}
+                  />
                 </div>
-                <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
+              </motion.a>
+
+              <motion.a
+                href={`https://www.instagram.com/${company.instagram}/`}
+                target='_blank'
+                rel='noopener noreferrer'
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className='group'
+              >
+                <div className='w-14 h-14 bg-gradient-to-br from-color-primary-light to-color-primary-dark rounded-full flex items-center justify-center hover:from-color-primary-dark hover:to-color-primary-light transition-all'>
+                  <InstagramIcon
+                    className={`${
+                      company.dark
+                        ? 'text-color-title-light'
+                        : 'text-color-title'
+                    } w-7 h-7`}
+                  />
+                </div>
               </motion.a>
             </div>
           </motion.div>

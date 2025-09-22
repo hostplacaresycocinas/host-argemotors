@@ -2,7 +2,8 @@
 
 import { company, preguntas } from '@/app/constants/constants';
 import { useState } from 'react';
-import DropDownIcon from './icons/DropDownIcon';
+import PlusIcon from './icons/PlusIcon';
+import MinusIcon from './icons/MinusIcon';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PreguntasHome = () => {
@@ -30,9 +31,10 @@ const PreguntasHome = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-3xl md:text-4xl lg:text-5xl  text-white mb-4 tracking-wide'
+            className='text-3xl md:text-4xl lg:text-5xl text-white mb-4 tracking-wide font-anton uppercase'
           >
-            Preguntas Frecuentes
+            <span className='text-color-primary-light'>Preguntas</span>{' '}
+            Frecuentes
           </motion.h2>
           <div className='w-16 h-1 bg-color-primary mx-auto mb-6'></div>
           <motion.p
@@ -42,7 +44,7 @@ const PreguntasHome = () => {
             viewport={{ once: true, margin: '0px 0px -100px 0px' }}
             className='text-white/70 max-w-2xl mx-auto text-lg  leading-relaxed'
           >
-            Resolvemos todas tus dudas sobre nuestros servicios y procesos
+            Despejamos las dudas más comunes sobre nuestros servicios
           </motion.p>
         </div>
 
@@ -59,11 +61,11 @@ const PreguntasHome = () => {
             >
               <div
                 onClick={() => toggleAnswer(pregunta.id)}
-                className={`relative bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer overflow-hidden
+                className={`relative bg-color-bg-secondary rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl
                   ${
                     activeAnswer === pregunta.id
-                      ? 'border-white/30 bg-white/10'
-                      : 'hover:bg-white/5'
+                      ? 'border-color-primary/50 bg-gradient-to-r from-color-primary/10 to-color-primary/5 shadow-color-primary/20'
+                      : 'border-white/20 hover:border-white/30 hover:from-white/8 hover:to-white/12'
                   }`}
               >
                 <div className='p-6 md:p-8'>
@@ -83,25 +85,30 @@ const PreguntasHome = () => {
                     {/* Botón de toggle */}
                     <div className='flex-shrink-0'>
                       <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
+                        className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 border-2
                         ${
                           activeAnswer === pregunta.id
-                            ? `bg-color-primary ${
+                            ? `bg-color-primary border-color-primary ${
                                 company.dark ? 'text-white' : 'text-black'
                               }`
-                            : 'bg-white/10 text-white/70 group-hover:bg-white/20 group-hover:text-white'
+                            : 'bg-transparent border-white/30 text-white/70 group-hover:border-white/50 group-hover:text-white'
                         }`}
                       >
                         <motion.div
+                          initial={false}
                           animate={{
-                            rotate: activeAnswer === pregunta.id ? 180 : 0,
+                            scale: activeAnswer === pregunta.id ? 0.8 : 1,
                           }}
                           transition={{
-                            duration: 0.3,
+                            duration: 0.2,
                             ease: 'easeInOut',
                           }}
                         >
-                          <DropDownIcon className='w-4 h-4' />
+                          {activeAnswer === pregunta.id ? (
+                            <MinusIcon className='w-5 h-5' />
+                          ) : (
+                            <PlusIcon className='w-5 h-5' />
+                          )}
                         </motion.div>
                       </div>
                     </div>
@@ -120,8 +127,8 @@ const PreguntasHome = () => {
                         }}
                         className='overflow-hidden'
                       >
-                        <div className='mt-6 pt-6 border-t border-white/10'>
-                          <p className='text-color-text-light leading-relaxed text-base md:text-lg '>
+                        <div className='mt-6 pt-6 border-t border-white/20'>
+                          <p className='text-color-text-light leading-relaxed text-base md:text-lg'>
                             {pregunta.answer}
                           </p>
                         </div>

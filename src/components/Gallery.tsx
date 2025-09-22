@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { company } from '@/app/constants/constants';
 
 const galleryImages = [
   {
@@ -23,7 +24,7 @@ const galleryImages = [
 
 const Gallery = () => {
   const autoplayOptions = {
-    delay: 3000,
+    delay: 3500,
     stopOnInteraction: false,
     stopOnMouseEnter: false,
   };
@@ -36,7 +37,30 @@ const Gallery = () => {
     <section className='mt-10 mb-16 md:mt-16 md:mb-24 relative overflow-hidden'>
       {/* Patrón de fondo sutil */}
       <div className='absolute inset-0 bg-grid-pattern opacity-5'></div>
-      <div className='max-w-5xl mx-auto px-4 sm:px-6 relative z-10'>
+      <div className='max-w-4xl mx-auto px-4 sm:px-6 relative z-10'>
+        <div className='text-center mb-8 md:mb-12'>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '0px 0px -100px 0px' }}
+            className='text-3xl md:text-4xl lg:text-5xl text-white mb-4 tracking-wide font-anton uppercase'
+          >
+            Somos{' '}
+            <span className='text-color-primary-light'>{company.name}</span>
+          </motion.h2>
+          <div className='w-16 h-1 bg-color-primary mx-auto mb-6'></div>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: '0px 0px -100px 0px' }}
+            className='text-white/70 max-w-2xl mx-auto text-lg  leading-relaxed'
+          >
+            Vehículos de calidad garantizada, listos para acompañarte en cada
+            viaje.
+          </motion.p>
+        </div>
         <motion.article
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +77,7 @@ const Gallery = () => {
             {galleryImages.map((img, idx) => (
               <div
                 key={idx}
-                className='flex-[0_0_65%] sm:flex-[0_0_55%] md:flex-[0_0_50%] lg:flex-[0_0_55%] mr-3 sm:mr-5 md:mr-8 lg:mr-10'
+                className='flex-[0_0_75%] sm:flex-[0_0_65%] md:flex-[0_0_60%] lg:flex-[0_0_65%] mr-3 sm:mr-5 md:mr-8 lg:mr-10'
               >
                 <div className='relative w-full rounded-lg md:rounded-xl overflow-hidden'>
                   <Image

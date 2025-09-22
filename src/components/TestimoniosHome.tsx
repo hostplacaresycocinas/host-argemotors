@@ -71,43 +71,10 @@ const TestimoniosHome = () => {
     <section className='py-16'>
       <div className='container mx-auto px-4'>
         {/* Título de la sección */}
-        <div className='text-center mb-3 md:mb-5'>
-          <h2 className='text-3xl md:text-4xl lg:text-5xl font-semibold mb-4'>
-            <span className='text-color-title-light'>Sobre </span>
-            <span className='text-color-primary'>Nosotros</span>
-          </h2>
-          <p className='text-color-text-light text-lg max-w-2xl lg:max-w-[950px] mx-auto'>
-            <strong className='text-color-title-light font-bold'>MERAK</strong>{' '}
-            es un concesionario con un{' '}
-            <span className='text-color-title-light font-semibold'>
-              concepto diferente
-            </span>{' '}
-            al tradicional, contamos con un equipo de jóvenes con mucha
-            experiencia. Nuestro{' '}
-            <span className='text-color-title-light font-semibold'>
-              principal objetivo
-            </span>{' '}
-            es que nuestros clientes se sientan cómodos desde el primer contacto
-            con nosotros brindándoles todas nuestras herramientas para todas
-            nuestras herramientas para que encuentren el auto que buscan, sin
-            preocupaciones y disfrutando el proceso. Contamos con{' '}
-            <span className='text-color-title-light font-semibold'>
-              servicio de gestoria propia
-            </span>
-            , y{' '}
-            <span className='text-color-title-light font-semibold'>
-              post venta
-            </span>
-            . Tomamos tu auto en permuta y{' '}
-            <span className='text-color-title-light font-semibold'>
-              financiamos con las mejores tasas.
-            </span>
-          </p>
-        </div>
 
         {/* Frase motivacional */}
         <div className='text-center mb-8'>
-          <h3 className='text-2xl md:text-3xl font-bold text-color-title-light'>
+          <h3 className='text-2xl md:text-3xl font-bold text-color-primary-light'>
             ¡Te esperamos para que vengas a vivir la experiencia!
           </h3>
         </div>
@@ -122,7 +89,7 @@ const TestimoniosHome = () => {
                   key={testimonio.id}
                   className='flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0 ml-6'
                 >
-                  <div className='bg-color-secondary rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full border border-neutral-700 hover:cursor-grab active:cursor-grabbing select-none'>
+                  <div className='bg-neutral-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full border border-neutral-700 hover:cursor-grab active:cursor-grabbing select-none'>
                     {/* Header: Foto del cliente, nombre y logo de Google */}
                     <div className='flex items-start justify-between mb-4'>
                       <div className='flex items-center gap-3'>
@@ -137,7 +104,7 @@ const TestimoniosHome = () => {
                           />
                         </div>
                         <div>
-                          <h4 className='font-semibold text-color-title-light text-base'>
+                          <h4 className='font-medium text-color-title-light text-base'>
                             {testimonio.nombre}
                           </h4>
                         </div>

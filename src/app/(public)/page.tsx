@@ -19,8 +19,8 @@ export default function Home() {
             <section className='flex flex-col gap-8 md:gap-10 lg:gap-12 mt-10 mb-10 md:mt-16 md:mb-16'>
               <CarsHome title='Nuestros Vehículos' />
             </section>
-            <Gallery />
             <Proceso />
+            <Gallery />
             <PreguntasHome />
           </main>
         </div>

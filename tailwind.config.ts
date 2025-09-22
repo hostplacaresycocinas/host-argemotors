@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ['var(--font-oswald)', 'sans-serif'],
-        sourceSans3: ['var(--font-source-sans-3)', 'sans-serif'],
+        anton: ['var(--font-anton)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
       },
       colors: {
         'color-primary': '#F4EE1E',

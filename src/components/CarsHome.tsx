@@ -322,7 +322,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                       <div
                         className={`${
                           company.price ? '' : 'hidden'
-                        } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-primary text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.price.moneda === 'ARS' ? '$' : 'US$'}
                         {auto.price.valor.toLocaleString('es-ES')}
@@ -346,7 +346,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                       {/* Precio o etiqueta destacada */}
                       <div className='flex justify-between items-center text-color-text-light mt-0.5'>
                         {auto.mileage === 0 ? (
-                          <span className='text-base font-semibold uppercase tracking-wider text-color-primary'>
+                          <span className='text-base font-medium uppercase tracking-wider text-color-primary'>
                             Nuevo <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>
@@ -364,7 +364,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                             company.dark
                               ? 'text-color-primary-light'
                               : 'text-color-primary-light'
-                          } inline-flex items-center  transition-colors font-semibold`}
+                          } inline-flex items-center  transition-colors font-medium`}
                         >
                           Ver más
                           <span className='inline-block transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ml-1'>

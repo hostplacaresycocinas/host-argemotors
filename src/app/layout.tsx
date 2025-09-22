@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
-import { Oswald, Source_Sans_3 } from 'next/font/google';
+import { Anton, Roboto } from 'next/font/google';
 import './globals.css';
 import { metadataCompany } from './constants/constants';
 import { ScrollToTopProvider } from '../components/ScrollToTopProvider';
 
-const oswald = Oswald({ subsets: ['latin'], variable: '--font-oswald' });
-
-const sourceSans3 = Source_Sans_3({
+const anton = Anton({
   subsets: ['latin'],
-  variable: '--font-source-sans-3',
+  variable: '--font-anton',
+  weight: ['400'],
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: ['400'],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body
-        className={`${oswald.variable} ${sourceSans3.variable} varible-oswald font-sourceSans3 bg-color-bg-primary text-color-text text-lg antialiased`}
+        className={`${anton.variable} ${roboto.variable} varible-anton font-roboto bg-color-bg-primary text-color-text text-lg antialiased`}
       >
         <ScrollToTopProvider />
         {children}

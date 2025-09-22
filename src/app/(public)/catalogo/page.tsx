@@ -718,7 +718,7 @@ const CatalogoPage = () => {
                               <div
                                 className={`${
                                   company.price ? '' : 'hidden'
-                                } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                                } text-color-primary text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                               >
                                 {car.price.moneda === 'ARS' ? '$' : 'US$'}
                                 {car.price.valor.toLocaleString('es-ES')}
@@ -742,7 +742,7 @@ const CatalogoPage = () => {
                               {/* Precio o etiqueta destacada */}
                               <div className='flex justify-between items-center text-color-text-light mt-0.5'>
                                 {car.mileage === 0 ? (
-                                  <span className='text-base font-semibold uppercase tracking-wider text-color-primary'>
+                                  <span className='text-base font-medium uppercase tracking-wider text-color-primary'>
                                     Nuevo{' '}
                                     <span className='text-color-primary'>
                                       •
@@ -766,7 +766,7 @@ const CatalogoPage = () => {
                                     company.dark
                                       ? 'text-color-primary-light'
                                       : 'text-color-primary-light'
-                                  } inline-flex items-center  transition-colors font-semibold`}
+                                  } inline-flex items-center  transition-colors font-medium`}
                                 >
                                   Ver más
                                   <span className='inline-block transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ml-1'>
@@ -834,7 +834,7 @@ const CatalogoPage = () => {
                 {searchFilter ? (
                   <>
                     No se encontraron resultados para la búsqueda{' '}
-                    <span className='text-color-title-light font-semibold'>
+                    <span className='text-color-title-light font-medium'>
                       &quot;{searchFilter}&quot;
                     </span>
                     {(marcaFilter || categoriaFilter) &&
@@ -844,11 +844,11 @@ const CatalogoPage = () => {
                 ) : marcaFilter && categoriaFilter ? (
                   <>
                     No hay vehículos de la marca{' '}
-                    <span className='text-color-title-light font-semibold'>
+                    <span className='text-color-title-light font-medium'>
                       {marcaFilter}
                     </span>{' '}
                     en la categoría{' '}
-                    <span className='text-color-title-light font-semibold'>
+                    <span className='text-color-title-light font-medium'>
                       {capitalizeFirstLetter(categoriaFilter)}
                     </span>
                     .
@@ -856,7 +856,7 @@ const CatalogoPage = () => {
                 ) : marcaFilter ? (
                   <>
                     No hay vehículos disponibles de la marca{' '}
-                    <span className='text-color-title-light font-semibold'>
+                    <span className='text-color-title-light font-medium'>
                       {marcaFilter}
                     </span>
                     .
@@ -864,7 +864,7 @@ const CatalogoPage = () => {
                 ) : categoriaFilter ? (
                   <>
                     No hay vehículos disponibles en la categoría{' '}
-                    <span className='text-color-title-light font-semibold'>
+                    <span className='text-color-title-light font-medium'>
                       {capitalizeFirstLetter(categoriaFilter)}
                     </span>
                     .
@@ -876,7 +876,7 @@ const CatalogoPage = () => {
               <Link
                 className={`${
                   company.dark ? 'text-color-title-light' : 'text-color-title'
-                } mt-5 border-2 border-transparent bg-color-primary hover:bg-color-primary/80 transition-colors px-4 md:px-6 py-3 font-semibold rounded`}
+                } mt-5 border-2 border-transparent bg-color-primary hover:bg-color-primary/80 transition-colors px-4 md:px-6 py-3 font-medium rounded`}
                 href='/catalogo'
                 onClick={(e) => {
                   e.preventDefault();

@@ -36,7 +36,7 @@ const NosotrosPage = () => {
               company.secondaryColor
                 ? 'text-color-secondary-light'
                 : 'text-color-primary-light'
-            } text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4 lg:mb-6`}
+            } text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4 lg:mb-6 font-anton uppercase tracking-wide`}
           >
             Nosotros
           </motion.h1>
@@ -51,105 +51,128 @@ const NosotrosPage = () => {
         </div>
       </section>
 
-      {/* Sección de historia */}
-      <section className='pt-8 mb-12 md:pt-12 md:mb-16'>
-        <div className='max-w-6xl mx-auto px-4'>
-          <div className='grid lg:grid-cols-2 gap-12 lg:gap-12 items-center'>
-            {/* Texto */}
+      {/* Sección de historia con diseño moderno */}
+      <section className='py-16 md:py-24 relative'>
+        {/* Fondo con patrón */}
+        <div className='absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.02)_1px,transparent_0)] bg-[length:30px_30px]'></div>
+
+        <div className='max-w-7xl mx-auto px-4 relative z-10'>
+          <div className='grid lg:grid-cols-2 gap-16 items-center'>
+            {/* Texto con diseño de tarjeta */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              className='order-2 lg:order-1'
             >
-              <div className='space-y-6 text-color-text-light text-lg lg:text-xl leading-relaxed'>
-                <p>
-                  <span className='text-color-primary-light font-bold'>
-                    {company.name}
-                  </span>{' '}
-                  nació de la pasión por los automóviles y el compromiso con la
-                  excelencia en el servicio. Desde nuestros inicios, nos hemos
-                  dedicado a seleccionar cuidadosamente cada vehículo.
-                </p>
-                <p>
-                  Hoy, seguimos siendo fieles a esos principios fundamentales.
-                  Cada auto que seleccionamos, cada cliente que atendemos y cada
-                  detalle que cuidamos refleja nuestro compromiso con brindar la
-                  mejor experiencia posible en la compra de vehículos usados.
-                </p>
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10 shadow-xl'>
+                <div className='space-y-6 text-color-text-light text-lg leading-relaxed'>
+                  <div className='flex items-start gap-4'>
+                    <div className='w-2 h-2 bg-color-primary rounded-full mt-3 flex-shrink-0'></div>
+                    <p>
+                      <span className='text-color-primary-light font-semibold text-xl'>
+                        {company.name}
+                      </span>{' '}
+                      nació de la pasión por los automóviles y el compromiso con
+                      la excelencia en el servicio. Desde nuestros inicios, nos
+                      hemos dedicado a seleccionar cuidadosamente cada vehículo.
+                    </p>
+                  </div>
+
+                  <div className='flex items-start gap-4'>
+                    <div className='w-2 h-2 bg-color-primary rounded-full mt-3 flex-shrink-0'></div>
+                    <p>
+                      Hoy, seguimos siendo fieles a esos principios
+                      fundamentales. Cada auto que seleccionamos, cada cliente
+                      que atendemos y cada detalle que cuidamos refleja nuestro
+                      compromiso con brindar la mejor experiencia posible en la
+                      compra de vehículos usados.
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
-            {/* Imagen */}
+            {/* Imagen con diseño moderno */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className='relative'
+              className='relative order-1 lg:order-2'
             >
-              <div className='relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl'>
-                <Image
-                  src='/assets/nosotros/nosotros-1.webp'
-                  alt='Nuestro equipo trabajando'
-                  fill
-                  className='object-cover'
-                />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent'></div>
+              <div className='relative'>
+                <div className='absolute -inset-4 bg-gradient-to-r from-color-primary/15 to-color-primary/15 rounded-2xl blur-xl'></div>
+                <div className='relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border border-white/10'>
+                  <Image
+                    src='/assets/nosotros/nosotros-1.webp'
+                    alt='Nuestro equipo trabajando'
+                    fill
+                    className='object-cover'
+                  />
+                  <div className='absolute inset-0 bg-gradient-to-t from-black/30 to-transparent'></div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Nueva sección: Nuestro Compromiso */}
-      <section className='mt-8 mb-16 md:mt-12 md:mb-24'>
-        <div className='max-w-5xl mx-auto px-4'>
+      {/* Sección de compromisos con diseño moderno */}
+      <section className='pt-8 pb-16 md:pt-12 md:pb-24 relative'>
+        {/* Fondo con gradiente */}
+
+        <div className='max-w-7xl mx-auto px-4 relative z-10'>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className='text-center mb-16'
+            className='text-center mb-20'
           >
-            <h2 className='text-3xl md:text-4xl font-bold text-color-primary-light mb-4'>
-              Nuestro Compromiso
+            <h2 className='text-3xl md:text-4xl lg:text-5xl text-white mb-4 font-anton uppercase tracking-wide'>
+              Nuestras{' '}
+              <span className='text-color-primary-light'>Fortalezas</span>
             </h2>
+            <div className='w-20 h-1 bg-color-primary mx-auto mb-6'></div>
             <p className='text-color-text-light text-lg max-w-3xl mx-auto'>
-              Más que vender autos, construimos relaciones y cumplimos sueños
+              Tu confianza es nuestro motor, tu satisfacción nuestro destino
             </p>
           </motion.div>
 
-          <div className='grid md:grid-cols-2 gap-8'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {/* Compromiso 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className='text-center'
+              className='group'
             >
-              <div className='w-20 h-20 bg-color-primary/20 rounded-full flex items-center justify-center mx-auto mb-4'>
-                <svg
-                  className='w-10 h-10 text-color-primary'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-                  />
-                </svg>
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-color-primary/30 transition-all duration-300 h-full'>
+                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300'>
+                  <svg
+                    className='w-8 h-8 text-color-primary'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+                    />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-semibold text-white mb-3 text-center'>
+                  Calidad Garantizada
+                </h3>
+                <p className='text-color-text-light text-center leading-relaxed'>
+                  Cada vehículo pasa por rigurosas inspecciones
+                </p>
               </div>
-              <h3 className='text-lg font-semibold text-color-title-light mb-2'>
-                Calidad Garantizada
-              </h3>
-              <p className='text-color-text-light'>
-                Cada vehículo pasa por rigurosas inspecciones
-              </p>
             </motion.div>
 
             {/* Compromiso 2 */}
@@ -158,60 +181,31 @@ const NosotrosPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className='text-center'
+              className='group'
             >
-              <div className='w-20 h-20 bg-color-primary/20 rounded-full flex items-center justify-center mx-auto mb-4'>
-                <svg
-                  className='w-10 h-10 text-color-primary'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-                  />
-                </svg>
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-color-primary/30 transition-all duration-300 h-full'>
+                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300'>
+                  <svg
+                    className='w-8 h-8 text-color-primary'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
+                    />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-semibold text-white mb-3 text-center'>
+                  Respuesta Rápida
+                </h3>
+                <p className='text-color-text-light text-center leading-relaxed'>
+                  Te respondemos en el menor tiempo posible
+                </p>
               </div>
-              <h3 className='text-lg font-semibold text-color-title-light mb-2'>
-                Respuesta Rápida
-              </h3>
-              <p className='text-color-text-light'>
-                Te respondemos en el menor tiempo posible
-              </p>
-            </motion.div>
-
-            {/* Compromiso 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className='text-center'
-            >
-              <div className='w-20 h-20 bg-color-primary/20 rounded-full flex items-center justify-center mx-auto mb-4'>
-                <svg
-                  className='w-10 h-10 text-color-primary'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z'
-                  />
-                </svg>
-              </div>
-              <h3 className='text-lg font-semibold text-color-title-light mb-2'>
-                Financiación Flexible
-              </h3>
-              <p className='text-color-text-light'>
-                Opciones de pago adaptadas a tus necesidades
-              </p>
             </motion.div>
 
             {/* Compromiso 4 */}
@@ -220,17 +214,19 @@ const NosotrosPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className='text-center'
+              className='group'
             >
-              <div className='w-20 h-20 bg-color-primary/20 rounded-full flex items-center justify-center mx-auto mb-4'>
-                <CarStrokeIcon className='w-[52px] h-[52px] text-color-primary stroke-2' />
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-color-primary/30 transition-all duration-300 h-full'>
+                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300'>
+                  <CarStrokeIcon className='w-8 h-8 text-color-primary stroke-2' />
+                </div>
+                <h3 className='text-xl font-semibold text-white mb-3 text-center'>
+                  Amplio Stock
+                </h3>
+                <p className='text-color-text-light text-center leading-relaxed'>
+                  Gran variedad de vehículos para elegir
+                </p>
               </div>
-              <h3 className='text-lg font-semibold text-color-title-light mb-2'>
-                Amplio Stock
-              </h3>
-              <p className='text-color-text-light'>
-                Gran variedad de vehículos para elegir
-              </p>
             </motion.div>
           </div>
         </div>
