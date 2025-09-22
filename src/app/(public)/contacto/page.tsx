@@ -78,7 +78,7 @@ const ContactoPage = () => {
                 viewport={{ once: true }}
                 className='text-center'
               >
-                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-6'>
+                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-3 md:mb-5'>
                   <LocationStrokeIcon className='w-9 h-9 text-color-primary' />
                 </div>
                 <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
@@ -104,7 +104,7 @@ const ContactoPage = () => {
                 viewport={{ once: true }}
                 className='text-center'
               >
-                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-6'>
+                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-3 md:mb-5'>
                   <PhoneIcon className='w-9 h-9 text-color-primary' />
                 </div>
                 <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
@@ -140,7 +140,7 @@ const ContactoPage = () => {
                 viewport={{ once: true }}
                 className='text-center'
               >
-                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-6'>
+                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-3 md:mb-5'>
                   <svg
                     className='w-9 h-9 text-color-primary'
                     fill='none'
