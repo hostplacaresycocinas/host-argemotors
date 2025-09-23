@@ -19,41 +19,39 @@ const Footer = () => {
       <div className='relative z-10 max-w-7xl mx-auto px-6 lg:px-8'>
         {/* Sección principal */}
         <div className='pt-8 pb-12 md:pt-12 md:pb-16'>
-          {/* Header del footer */}
-          <div className='flex flex-col items-start md:items-center justify-center md:text-center mb-8 md:mb-12'>
-            <div className='inline-block mb-6'>
-              {company.favicon ? (
-                <div className='w-48 sm:w-52 md:w-52 lg:w-56 h-12 sm:h-14'>
-                  <Image
-                    className='w-full h-full object-contain object-left md:object-center'
-                    src='/assets/company/logo.webp'
-                    alt={`${company.name} logo`}
-                    width={256}
-                    height={64}
-                  />
-                </div>
-              ) : (
-                <div className='w-52 sm:w-52 md:w-56 lg:w-64 h-14 md:h-16'>
-                  <Image
-                    className='w-full h-full object-contain object-left md:object-center'
-                    src='/assets/company/logo.webp'
-                    alt={`${company.name} logo`}
-                    width={240}
-                    height={56}
-                  />
-                </div>
-              )}
-            </div>
-
-            <p className='text-color-text-light text-lg max-w-lg leading-relaxed'>
-              {company.footer}
-            </p>
-          </div>
-
           {/* Grid principal */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 lg:gap-16 mb-8 md:mb-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12'>
+            {/* Logo y descripción */}
+            <div>
+              <div className='mb-6'>
+                {company.favicon ? (
+                  <div className='w-48 sm:w-52 md:w-52 lg:w-56 h-12 sm:h-14'>
+                    <Image
+                      className='w-full h-full object-contain object-left'
+                      src='/assets/company/logo.webp'
+                      alt={`${company.name} logo`}
+                      width={256}
+                      height={64}
+                    />
+                  </div>
+                ) : (
+                  <div className='w-52 sm:w-52 md:w-56 lg:w-64 h-14 md:h-16'>
+                    <Image
+                      className='w-full h-full object-contain object-left'
+                      src='/assets/company/logo.webp'
+                      alt={`${company.name} logo`}
+                      width={240}
+                      height={56}
+                    />
+                  </div>
+                )}
+              </div>
+              <p className='text-color-text-light text-base leading-relaxed'>
+                {company.footer}
+              </p>
+            </div>
             {/* Navegación */}
-            <div className='lg:col-span-1'>
+            <div>
               <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Navegación
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
@@ -73,7 +71,7 @@ const Footer = () => {
             </div>
 
             {/* Contacto */}
-            <div className='lg:col-span-1'>
+            <div>
               <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Contacto
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
@@ -87,8 +85,14 @@ const Footer = () => {
                     rel='noopener noreferrer'
                     className='flex items-center gap-3 group'
                   >
-                    <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
-                      <LocationIcon className='w-5 h-5 text-color-title-light' />
+                    <div className='w-10 h-10 rounded-lg bg-color-primary flex items-center justify-center flex-shrink-0 group-hover:bg-color-primary-dark transition-colors'>
+                      <LocationIcon
+                        className={`w-6 h-6 ${
+                          company.dark
+                            ? 'text-color-title-light'
+                            : 'text-color-title'
+                        }`}
+                      />
                     </div>
                     <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base leading-relaxed'>
                       {company.adress && `${company.adress}, `}
@@ -107,8 +111,14 @@ const Footer = () => {
                       rel='noopener noreferrer'
                       className='flex items-center gap-3 group'
                     >
-                      <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
-                        <WhatsappFillIcon className='w-5 h-5 text-color-title-light' />
+                      <div className='w-10 h-10 rounded-lg bg-color-primary flex items-center justify-center flex-shrink-0 group-hover:bg-color-primary-dark transition-colors'>
+                        <WhatsappFillIcon
+                          className={`w-6 h-6 ${
+                            company.dark
+                              ? 'text-color-title-light'
+                              : 'text-color-title'
+                          }`}
+                        />
                       </div>
                       <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                         {whatsappNumber}
@@ -124,8 +134,14 @@ const Footer = () => {
                     rel='noopener noreferrer'
                     className='flex items-center gap-3 group'
                   >
-                    <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
-                      <EmailFillIcon className='w-5 h-5 text-color-title-light' />
+                    <div className='w-10 h-10 rounded-lg bg-color-primary flex items-center justify-center flex-shrink-0 group-hover:bg-color-primary-dark transition-colors'>
+                      <EmailFillIcon
+                        className={`w-6 h-6 ${
+                          company.dark
+                            ? 'text-color-title-light'
+                            : 'text-color-title'
+                        }`}
+                      />
                     </div>
                     <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                       {company.email}
@@ -136,7 +152,7 @@ const Footer = () => {
             </div>
 
             {/* Redes sociales */}
-            <div className='lg:col-span-1'>
+            <div>
               <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
                 Síguenos
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
@@ -149,8 +165,14 @@ const Footer = () => {
                     rel='noopener noreferrer'
                     className='flex items-center gap-3 group'
                   >
-                    <div className='w-10 h-10 rounded-lg bg-neutral-700 group-hover:bg-neutral-600 transition-colors flex items-center justify-center'>
-                      <InstagramIcon className='w-5 h-5 text-color-title-light' />
+                    <div className='w-10 h-10 rounded-lg bg-color-primary flex items-center justify-center group-hover:bg-color-primary-dark transition-colors'>
+                      <InstagramIcon
+                        className={`w-[22px] h-[22px] ${
+                          company.dark
+                            ? 'text-color-title-light'
+                            : 'text-color-title'
+                        }`}
+                      />
                     </div>
                     <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                       @{company.instagram}
@@ -164,35 +186,20 @@ const Footer = () => {
                     rel='noopener noreferrer'
                     className='flex items-center gap-3 group'
                   >
-                    <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center group-hover:bg-neutral-600 transition-colors'>
-                      <FacebookIcon className='w-5 h-5 text-color-title-light' />
+                    <div className='w-10 h-10 rounded-lg bg-color-primary flex items-center justify-center group-hover:bg-color-primary-dark transition-colors'>
+                      <FacebookIcon
+                        className={`w-6 h-6 ${
+                          company.dark
+                            ? 'text-color-title-light'
+                            : 'text-color-title'
+                        }`}
+                      />
                     </div>
                     <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                       Facebook
                     </span>
                   </a>
                 )}
-              </div>
-            </div>
-
-            {/* Horarios o información adicional */}
-            <div className='lg:col-span-1'>
-              <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
-                Horarios
-                <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
-              </h3>
-              <div className='space-y-3'>
-                {company.openDays.map((day) => (
-                  <div
-                    key={day.title}
-                    className='text-color-text-light text-base'
-                  >
-                    <p className='font-medium text-color-title-light'>
-                      {day.title}
-                    </p>
-                    <p>{day.time}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

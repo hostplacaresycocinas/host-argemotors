@@ -6,20 +6,20 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'northerncars',
-  name: 'Northern Cars',
-  adress: 'Cacique Coliqueo 1041',
-  city: 'Morón',
-  email: null,
-  instagram: 'northern.cars',
-  facebook: 'https://www.facebook.com/p/northerncars-100050372481807/',
-  whatsapp: ['1123759373'],
-  googlemapsLink: 'https://maps.app.goo.gl/9KUPGPMCrPFP1a4c9',
+  id: 'pescemotors',
+  name: 'Pesce Motors',
+  adress: 'Tres Arroyos 387',
+  city: 'Cipolletti',
+  email: 'pescemotors@gmail.com',
+  instagram: 'pescemotors',
+  facebook: 'https://www.facebook.com/pescemotors',
+  whatsapp: ['2996375406'],
+  googlemapsLink: 'https://maps.app.goo.gl/q1LcEnWXhakaw2B76',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3282.8907902930673!2d-58.5835!3d-34.6322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb92bc4a13e6d%3A0x2546e94d3d641770!2sCacique%20Coliqueo%201041%2C%20B1865%20El%20Palomar%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1758234992637!5m2!1ses!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.170298736416!2d-67.99988412321908!3d-38.942937699414315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a314553f039bb%3A0xc8f5533bef6710e6!2sPesce%20Motors!5e0!3m2!1sen!2sar!4v1758385013443!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '09:00 a 18:30hs' },
-    { title: 'Sábados y Domingos', time: 'Cerrado' },
+    { title: 'Lunes a Viernes', time: '8:30 a 13 y 16 a 19:30hs' },
+    { title: 'Sábados', time: '9:30 a 13hs' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://northerncars.vercel.app/',
-  title: 'Northern Cars - Compra y Venta de Autos',
+  metadataBase: 'https://pescemotors.vercel.app/',
+  title: 'Pesce Motors - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
