@@ -1,25 +1,25 @@
 export const company = {
-  dark: false,
+  dark: true,
   darkmode: true,
   shortAdress: true,
   favicon: false,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'pescemotors',
-  name: 'Pesce Motors',
-  adress: 'Tres Arroyos 387',
-  city: 'Cipolletti',
-  email: 'pescemotors@gmail.com',
-  instagram: 'pescemotors',
-  facebook: 'https://www.facebook.com/pescemotors',
-  whatsapp: ['2996375406'],
-  googlemapsLink: 'https://maps.app.goo.gl/q1LcEnWXhakaw2B76',
+  id: 'rodzcars',
+  name: 'Rodz Cars',
+  adress: 'Venezuela 3787',
+  city: 'Vicente López',
+  email: 'rodzcars@gmail.com',
+  instagram: 'rodz.cars',
+  facebook: 'https://www.facebook.com/profile.php?id=100064162658898',
+  whatsapp: ['1132007531'],
+  googlemapsLink: 'https://maps.app.goo.gl/LmsZ2822mgopYPus8',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.170298736416!2d-67.99988412321908!3d-38.942937699414315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a314553f039bb%3A0xc8f5533bef6710e6!2sPesce%20Motors!5e0!3m2!1sen!2sar!4v1758385013443!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.1916102210625!2d-58.50638448733154!3d-34.54870365448433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7f860cb5e69%3A0x60dfd9c968716a9d!2sRodz%20Cars!5e0!3m2!1sen!2sar!4v1759241793761!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '8:30 a 13 y 16 a 19:30hs' },
-    { title: 'Sábados', time: '9:30 a 13hs' },
+    { title: 'Lunes a Viernes', time: '09:00 a 18:00hs' },
+    { title: 'Sábado', time: '09:00 a 13:00hs' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://pescemotors.vercel.app/',
-  title: 'Pesce Motors - Compra y Venta de Autos',
+  metadataBase: 'https://rodzcars.vercel.app/',
+  title: 'Rodz Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };

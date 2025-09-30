@@ -27,7 +27,7 @@ const HeroHome = () => {
                   transition={{ duration: 0.5 }}
                   className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-primary-light'
                 >
-                  Tu Próximo Vehículo
+                  Encontrá tu
                 </motion.h2>
               </div>
               <div className='md:gap-3 text-nowrap lg:mb-2'>
@@ -37,7 +37,7 @@ const HeroHome = () => {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-title-light'
                 >
-                  Está en {company.name}
+                  próximo vehículo
                 </motion.h2>
               </div>
             </div>
@@ -60,8 +60,10 @@ const HeroHome = () => {
             >
               <Link
                 href='/catalogo'
-                className={`flex group relative px-6 md:px-8 py-3.5 md:py-4 bg-color-primary hover:bg-color-primary-dark font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${
-                  company.dark ? 'text-color-title-light' : 'text-color-title'
+                className={`flex group relative px-6 md:px-8 py-3.5 md:py-4 bg-color-primary hover:bg-color-primary-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${
+                  company.dark
+                    ? 'text-color-title-light font-medium'
+                    : 'text-color-title font-semibold'
                 }`}
               >
                 <span className='relative z-10 flex items-center justify-center gap-2'>

@@ -154,7 +154,7 @@ const Footer = () => {
             {/* Redes sociales */}
             <div>
               <h3 className='text-color-title-light text-xl font-medium mb-6 relative'>
-                Síguenos
+                Seguinos
                 <div className='absolute -bottom-2 left-0 w-16 h-0.5 bg-gradient-to-r from-color-primary to-transparent rounded-full'></div>
               </h3>
               <div className='space-y-4'>
