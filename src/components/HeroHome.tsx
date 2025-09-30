@@ -25,7 +25,7 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-primary-light'
+                  className='uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-primary-light'
                 >
                   Encontrá tu
                 </motion.h2>
@@ -35,7 +35,7 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-title-light'
+                  className='uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-title-light'
                 >
                   próximo vehículo
                 </motion.h2>
