@@ -75,8 +75,9 @@ const NosotrosPage = () => {
                         {company.name}
                       </span>{' '}
                       nació de la pasión por los automóviles y el compromiso con
-                      la excelencia en el servicio. Desde nuestros inicios, nos
-                      hemos dedicado a seleccionar cuidadosamente cada vehículo.
+                      la excelencia en el servicio. Con más de 30 años de
+                      experiencia en el mercado, nos hemos dedicado a
+                      seleccionar cuidadosamente cada vehículo.
                     </p>
                   </div>
 
