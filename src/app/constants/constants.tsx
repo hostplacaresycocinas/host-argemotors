@@ -2,23 +2,23 @@ export const company = {
   dark: true,
   darkmode: true,
   shortAdress: true,
-  favicon: true,
+  favicon: false,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'batallerautomotores',
-  name: 'Bataller Automotores',
-  adress: 'Guido 2156',
+  id: 'sergiocaminoautos',
+  name: 'Sergio Camino Autos',
+  adress: 'Gascon 3430',
   city: 'Mar del Plata',
-  email: 'batallerautomotores@yahoo.com.ar',
-  instagram: 'batallerautomotores',
-  facebook: 'https://www.facebook.com/batallerautomotoressa/',
-  whatsapp: ['2235951910'],
-  googlemapsLink: 'https://maps.app.goo.gl/3ChLLETAg3eer1TY6',
+  email: 'sergiocaminoautos@gmail.com',
+  instagram: 'sergiocaminoautos',
+  facebook: 'https://www.facebook.com/p/Sergio-Camino-AUTOS-61552942402084/',
+  whatsapp: ['2235245246'],
+  googlemapsLink: 'https://maps.app.goo.gl/i7Zba4XnpaisqZJk9',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.1716627975193!2d-57.56542578721612!3d-37.9964562443863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dead1443efd7%3A0x40ce06a3b9dda8ac!2sBataller%20Automotores!5e0!3m2!1sen!2sar!4v1759323385935!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9479920296353!2d-57.56326288721587!3d-38.00167354468588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584deaf1ea670d7%3A0x23d86393e5ef9ea5!2sSergio%20Camino%20Autos!5e0!3m2!1sen!2sar!4v1759423180175!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '8 a 12 y 14:30 a 17:30hs' },
+    { title: 'Lunes a Viernes', time: '10:00 a 17:00hs' },
     { title: 'Sábado y Domingo', time: 'Cerrado' },
   ],
   footer:
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://batallerautomotores.vercel.app/',
-  title: 'Bataller Automotores - Compra y Venta de Autos',
+  metadataBase: 'https://sergiocaminoautos.vercel.app/',
+  title: 'Sergio Camino Autos - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };

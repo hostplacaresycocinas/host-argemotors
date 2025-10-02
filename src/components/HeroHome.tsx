@@ -27,7 +27,7 @@ const HeroHome = () => {
                   transition={{ duration: 0.5 }}
                   className='uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-primary-light'
                 >
-                  Encontrá tu
+                  El auto que buscas
                 </motion.h2>
               </div>
               <div className='md:gap-3 text-nowrap lg:mb-2'>
@@ -37,7 +37,7 @@ const HeroHome = () => {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className='uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-title-light'
                 >
-                  próximo vehículo
+                  te esta esperando
                 </motion.h2>
               </div>
             </div>

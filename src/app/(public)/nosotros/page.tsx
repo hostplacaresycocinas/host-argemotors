@@ -150,8 +150,8 @@ const NosotrosPage = () => {
               viewport={{ once: true }}
               className='group'
             >
-              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-color-primary/30 transition-all duration-300 h-full'>
-                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full'>
+                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6'>
                   <svg
                     className='w-8 h-8 text-color-primary'
                     fill='none'
@@ -183,8 +183,8 @@ const NosotrosPage = () => {
               viewport={{ once: true }}
               className='group'
             >
-              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-color-primary/30 transition-all duration-300 h-full'>
-                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full'>
+                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6'>
                   <svg
                     className='w-8 h-8 text-color-primary'
                     fill='none'
@@ -216,8 +216,8 @@ const NosotrosPage = () => {
               viewport={{ once: true }}
               className='group'
             >
-              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-color-primary/30 transition-all duration-300 h-full'>
-                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300'>
+              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full'>
+                <div className='w-16 h-16 bg-gradient-to-br from-color-primary/20 to-color-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6'>
                   <CarStrokeIcon className='w-8 h-8 text-color-primary stroke-2' />
                 </div>
                 <h3 className='text-xl font-semibold text-white mb-3 text-center'>
