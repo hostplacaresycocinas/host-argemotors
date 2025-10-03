@@ -6,20 +6,20 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'americancars',
-  name: 'American Cars',
-  adress: 'Av. Mitre 2332',
-  city: 'Avellaneda',
-  email: 'americancars2332@gmail.com',
-  instagram: 'americancars4016',
-  facebook: 'https://www.facebook.com/profile.php?id=61577813236466',
-  whatsapp: ['1158780773'],
-  googlemapsLink: 'https://maps.app.goo.gl/6cMf99rqQXFghjut5',
+  id: 'automotoresmateos',
+  name: 'Automotores Mateos',
+  adress: 'Carlos Pellegrini 1297',
+  city: 'Lujan',
+  email: 'info@autosmateos.com.ar',
+  instagram: 'automotoresmateos',
+  facebook: 'https://www.facebook.com/automotores.mateos',
+  whatsapp: ['1168945877', '1138820876'],
+  googlemapsLink: 'https://maps.app.goo.gl/UibPkhQeXcmgES1r5',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15608.51181707429!2d-58.36376468958491!3d-34.67274553094248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a332e34bdde611%3A0xdd69aa06e4338922!2sAmerican%20Cars%20Avellaneda!5e0!3m2!1sen!2sar!4v1759461751791!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.5892154969947!2d-59.106109410782345!3d-34.56395478568972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc87b81145b913%3A0x66d145feb03db112!2sAutomotores%20Mateos!5e0!3m2!1ses!2sar!4v1759445056454!5m2!1ses!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '10:00 a 18:00hs' },
-    { title: 'Sábado', time: '10:00 a 13:00hs' },
+    { title: 'Lunes a Viernes', time: '8 a 13 y 16 a 19:30hs' },
+    { title: 'Sábado', time: '8 a 13hs' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://americancars.vercel.app/',
-  title: 'American Cars - Compra y Venta de Autos',
+  metadataBase: 'https://automotoresmateos.vercel.app/',
+  title: 'Automotores Mateos - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
