@@ -6,20 +6,20 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'automotoresmateos',
-  name: 'Automotores Mateos',
-  adress: 'Carlos Pellegrini 1297',
-  city: 'Lujan',
-  email: 'info@autosmateos.com.ar',
-  instagram: 'automotoresmateos',
-  facebook: 'https://www.facebook.com/automotores.mateos',
-  whatsapp: ['1168945877', '1138820876'],
-  googlemapsLink: 'https://maps.app.goo.gl/UibPkhQeXcmgES1r5',
+  id: 'deltagarage',
+  name: 'Delta Garage',
+  adress: 'Quintana 1050',
+  city: 'San Fernando',
+  email: 'deltagarage@gmail.com',
+  instagram: 'delta.garageok',
+  facebook: null,
+  whatsapp: ['1161249562'],
+  googlemapsLink: 'https://maps.app.goo.gl/gWWUegn6kLVBeHNU7',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.5892154969947!2d-59.106109410782345!3d-34.56395478568972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc87b81145b913%3A0x66d145feb03db112!2sAutomotores%20Mateos!5e0!3m2!1ses!2sar!4v1759445056454!5m2!1ses!2sar',
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3290.202782576809!2d-58.5465!3d-34.447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcaff31aaa531f%3A0xca5d4d00d10a215e!2sQuintana%201050%2C%20B1644%20San%20Fernando%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1759511678669!5m2!1ses!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '8 a 13 y 16 a 19:30hs' },
-    { title: 'Sábado', time: '8 a 13hs' },
+    { title: 'Lunes a Viernes', time: '09:00 a 18:00hs' },
+    { title: 'Sábado', time: '09:00 a 13:00hs' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://automotoresmateos.vercel.app/',
-  title: 'Automotores Mateos - Compra y Venta de Autos',
+  metadataBase: 'https://deltagarage.vercel.app/',
+  title: 'Delta Garage - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
