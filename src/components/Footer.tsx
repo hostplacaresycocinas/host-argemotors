@@ -15,7 +15,7 @@ import OnlymotorsLogo from './icons/OnlymotorsLogo';
 
 const Footer = () => {
   return (
-    <footer className='relative bg-gradient-to-b from-neutral-900 to-neutral-950 overflow-hidden'>
+    <footer className='relative bg-gradient-to-b from-black to-neutral-900 overflow-hidden'>
       <div className='relative z-10 max-w-7xl mx-auto px-6 lg:px-8'>
         {/* Sección principal */}
         <div className='pt-8 pb-12 md:pt-12 md:pb-16'>

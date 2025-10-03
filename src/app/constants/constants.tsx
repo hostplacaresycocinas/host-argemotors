@@ -1,24 +1,24 @@
 export const company = {
-  dark: false,
+  dark: true,
   darkmode: true,
   shortAdress: true,
   favicon: true,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'deltagarage',
-  name: 'Delta Garage',
-  adress: 'Quintana 1050',
-  city: 'San Fernando',
-  email: 'deltagarage@gmail.com',
-  instagram: 'delta.garageok',
+  id: 'shinecars',
+  name: 'Shine Cars',
+  adress: 'Av. Jose de San Martin 1501',
+  city: 'Florencio Varela',
+  email: 'shinecars@gmail.com',
+  instagram: 'shinecars.ok',
   facebook: null,
-  whatsapp: ['1161249562'],
-  googlemapsLink: 'https://maps.app.goo.gl/gWWUegn6kLVBeHNU7',
+  whatsapp: ['1154965999'],
+  googlemapsLink: 'https://maps.app.goo.gl/yTRcY8W9McReL7cY9',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3290.202782576809!2d-58.5465!3d-34.447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcaff31aaa531f%3A0xca5d4d00d10a215e!2sQuintana%201050%2C%20B1644%20San%20Fernando%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1759511678669!5m2!1ses!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d819.1455482826007!2d-58.279763330334234!3d-34.791291996941965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a329002a523f19%3A0x97cca94f30d7153f!2sShine%20cars!5e0!3m2!1sen!2sar!4v1759456008742!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '09:00 a 18:00hs' },
+    { title: 'Lunes a Viernes', time: '09:00 a 19:00hs' },
     { title: 'Sábado', time: '09:00 a 13:00hs' },
   ],
   footer:
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://deltagarage.vercel.app/',
-  title: 'Delta Garage - Compra y Venta de Autos',
+  metadataBase: 'https://shinecars.vercel.app/',
+  title: 'Shine Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
