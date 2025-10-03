@@ -25,7 +25,7 @@ const Footer = () => {
             <div>
               <div className='mb-6'>
                 {company.favicon ? (
-                  <div className='w-48 sm:w-52 md:w-52 lg:w-56 h-12 sm:h-14'>
+                  <div className='w-40 sm:w-44 md:w-44 lg:w-48 h-12 sm:h-14'>
                     <Image
                       className='w-full h-full object-contain object-left'
                       src='/assets/company/logo.webp'

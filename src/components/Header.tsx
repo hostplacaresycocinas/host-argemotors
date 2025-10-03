@@ -34,7 +34,7 @@ const Header = () => {
               <>
                 <Image
                   priority
-                  className='w-[65px] h-[65px] sm:w-[70px] sm:h-[70px] lg:w-[75px] lg:h-[75px] object-contain'
+                  className='w-[80px] h-[80px] sm:w-[85px] sm:h-[85px] lg:w-[90px] lg:h-[90px] object-contain'
                   // className={`w-[65px] h-[65px] sm:w-[70px] sm:h-[70px] lg:w-[75px] lg:h-[75px] ring-[1.5px] ${
                   //   company.darkmode
                   //     ? 'ring-color-bg-primary'
@@ -47,7 +47,7 @@ const Header = () => {
                   width={64}
                   height={64}
                 />
-                <div className='h-[52px] md:h-[60px] w-56 sm:w-56 lg:w-60 xl:w-60'>
+                <div className='h-[52px] md:h-[60px] w-40 sm:w-44 lg:w-48 xl:w-48'>
                   <Image
                     priority
                     className='h-full w-full object-contain object-left'

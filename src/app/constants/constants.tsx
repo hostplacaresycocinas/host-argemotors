@@ -1,25 +1,25 @@
 export const company = {
-  dark: true,
+  dark: false,
   darkmode: true,
   shortAdress: true,
-  favicon: false,
+  favicon: true,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'sergiocaminoautos',
-  name: 'Sergio Camino Autos',
-  adress: 'Gascon 3430',
-  city: 'Mar del Plata',
-  email: 'sergiocaminoautos@gmail.com',
-  instagram: 'sergiocaminoautos',
-  facebook: 'https://www.facebook.com/p/Sergio-Camino-AUTOS-61552942402084/',
-  whatsapp: ['2235245246'],
-  googlemapsLink: 'https://maps.app.goo.gl/i7Zba4XnpaisqZJk9',
+  id: 'americancars',
+  name: 'American Cars',
+  adress: 'Av. Mitre 2332',
+  city: 'Avellaneda',
+  email: 'americancars2332@gmail.com',
+  instagram: 'americancars4016',
+  facebook: 'https://www.facebook.com/profile.php?id=61577813236466',
+  whatsapp: ['1158780773'],
+  googlemapsLink: 'https://maps.app.goo.gl/6cMf99rqQXFghjut5',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9479920296353!2d-57.56326288721587!3d-38.00167354468588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584deaf1ea670d7%3A0x23d86393e5ef9ea5!2sSergio%20Camino%20Autos!5e0!3m2!1sen!2sar!4v1759423180175!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15608.51181707429!2d-58.36376468958491!3d-34.67274553094248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a332e34bdde611%3A0xdd69aa06e4338922!2sAmerican%20Cars%20Avellaneda!5e0!3m2!1sen!2sar!4v1759461751791!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '10:00 a 17:00hs' },
-    { title: 'Sábado y Domingo', time: 'Cerrado' },
+    { title: 'Lunes a Viernes', time: '10:00 a 18:00hs' },
+    { title: 'Sábado', time: '10:00 a 13:00hs' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://sergiocaminoautos.vercel.app/',
-  title: 'Sergio Camino Autos - Compra y Venta de Autos',
+  metadataBase: 'https://americancars.vercel.app/',
+  title: 'American Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
