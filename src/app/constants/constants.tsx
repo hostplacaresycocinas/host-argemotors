@@ -6,18 +6,18 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'franchecars',
-  name: 'Franche Cars',
-  adress: 'Av. Gaona 1745',
-  city: 'Moreno',
-  email: null,
-  instagram: 'franchecars',
-  facebook: 'https://www.facebook.com/p/Franche-Cars-61572978636399/',
-  whatsapp: ['1181076187'],
-  googlemapsLink: 'https://maps.app.goo.gl/L4R1t4z69jhAqQX77',
+  id: 'gyfutmotors',
+  name: 'GYFUT MOTORS',
+  adress: 'Francisco Miguens 190',
+  city: 'Santa Fe',
+  email: 'gyfutperformance@hotmail.com',
+  instagram: 'gyfut.motors',
+  facebook: 'https://www.facebook.com/gyfutperformance/',
+  whatsapp: ['3424676711'],
+  googlemapsLink: 'https://maps.app.goo.gl/bi4LLVJzjEBQgZNR6',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31230.796310778325!2d-58.827708974462205!3d-34.63618489833592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc91451707ed2f%3A0xf92cdf0b5f538435!2sAv.%20Gaona%201745%2C%20C1744%20La%20Reja%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1759971148735!5m2!1ses!2sar',
-  openDays: ['Lunes a Sábado', 'Con cita Previa'],
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.513313188443!2d-60.70449170799286!3d-31.647173340801174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a960af2bdb13%3A0xa4f4dc724f94c0c3!2sGyfut!5e0!3m2!1ses-419!2sar!4v1759981813953!5m2!1ses-419!2sar',
+  openDays: ['Lunes a Viernes', 'Con cita Previa'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -26,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://franchecars.vercel.app/',
-  title: 'Franche Cars - Compra y Venta de Autos',
+  metadataBase: 'https://gyfutmotors.vercel.app/',
+  title: 'GYFUT MOTORS - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
