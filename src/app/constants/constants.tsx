@@ -2,22 +2,22 @@ export const company = {
   dark: false,
   darkmode: true,
   shortAdress: true,
-  favicon: true,
+  favicon: false,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'pitautos',
-  name: 'Pit Autos',
-  adress: 'Malabia 379A Bis',
+  id: 'autodesco',
+  name: 'Autodesco',
+  adress: 'Ituzaingó 1181',
   city: 'Rosario',
-  email: null,
-  instagram: 'pit_autos',
-  facebook: 'https://www.facebook.com/profile.php?id=61574629442382#',
-  whatsapp: ['3415856405'],
-  googlemapsLink: 'https://maps.app.goo.gl/xrnqDExyMNhFPR6Y7',
+  email: 'pablotodesco@gmail.com',
+  instagram: 'autodesco',
+  facebook: 'https://www.facebook.com/AUTODESCO',
+  whatsapp: ['3415852687'],
+  googlemapsLink: 'https://maps.app.goo.gl/TvW5Qkdy3U5PX3np9',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d976.6613496861792!2d-60.76167142246512!3d-32.92595706089705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1760016150115!5m2!1ses-419!2sar',
-  openDays: ['Lunes a Viernes 8:30 a 12:30 y 16 a 19hs', 'Sábado 8:30 a 13hs'],
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.635565703559!2d-60.64536232294897!3d-32.96062987259751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab08dec9a69b%3A0x3249b93179396971!2sAutodesco!5e0!3m2!1ses-419!2sar!4v1760011215322!5m2!1ses-419!2sar',
+  openDays: ['Lunes a Viernes 9 a 13 y 15 a 19hs', 'Sábado y Domingo Cerrado'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -26,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://pitautos.vercel.app/',
-  title: 'Pit Autos - Compra y Venta de Autos',
+  metadataBase: 'https://autodesco.vercel.app/',
+  title: 'Autodesco - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
