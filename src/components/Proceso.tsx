@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { company } from '@/app/constants/constants';
 
 const beneficios = [
   {
