@@ -1,23 +1,23 @@
 export const company = {
-  dark: true,
+  dark: false,
   darkmode: true,
   shortAdress: true,
-  favicon: false,
+  favicon: true,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'gyfutmotors',
-  name: 'GYFUT MOTORS',
-  adress: 'Francisco Miguens 190',
-  city: 'Santa Fe',
-  email: 'gyfutperformance@hotmail.com',
-  instagram: 'gyfut.motors',
-  facebook: 'https://www.facebook.com/gyfutperformance/',
-  whatsapp: ['3424676711'],
-  googlemapsLink: 'https://maps.app.goo.gl/bi4LLVJzjEBQgZNR6',
+  id: 'pitautos',
+  name: 'Pit Autos',
+  adress: 'Malabia 379A Bis',
+  city: 'Rosario',
+  email: null,
+  instagram: 'pit_autos',
+  facebook: 'https://www.facebook.com/profile.php?id=61574629442382#',
+  whatsapp: ['3415856405'],
+  googlemapsLink: 'https://maps.app.goo.gl/xrnqDExyMNhFPR6Y7',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.513313188443!2d-60.70449170799286!3d-31.647173340801174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a960af2bdb13%3A0xa4f4dc724f94c0c3!2sGyfut!5e0!3m2!1ses-419!2sar!4v1759981813953!5m2!1ses-419!2sar',
-  openDays: ['Lunes a Viernes', 'Con cita Previa'],
+    'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d976.6613496861792!2d-60.76167142246512!3d-32.92595706089705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1760016150115!5m2!1ses-419!2sar',
+  openDays: ['Lunes a Viernes 8:30 a 12:30 y 16 a 19hs', 'Sábado 8:30 a 13hs'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -26,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://gyfutmotors.vercel.app/',
-  title: 'GYFUT MOTORS - Compra y Venta de Autos',
+  metadataBase: 'https://pitautos.vercel.app/',
+  title: 'Pit Autos - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
