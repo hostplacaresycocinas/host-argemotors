@@ -161,8 +161,7 @@ const ContactoPage = () => {
                 <div className='space-y-2 text-color-text-light'>
                   {company.openDays.map((day, index) => (
                     <div key={index} className='leading-relaxed'>
-                      <span className='font-medium'>{day.title}:</span>{' '}
-                      {day.time}
+                      <span className='font-medium'>{day}</span>
                     </div>
                   ))}
                 </div>

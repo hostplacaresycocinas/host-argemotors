@@ -2,25 +2,22 @@ export const company = {
   dark: true,
   darkmode: true,
   shortAdress: true,
-  favicon: true,
+  favicon: false,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'shinecars',
-  name: 'Shine Cars',
-  adress: 'Av. Jose de San Martin 1501',
-  city: 'Florencio Varela',
-  email: 'shinecars@gmail.com',
-  instagram: 'shinecars.ok',
-  facebook: null,
-  whatsapp: ['1154965999'],
-  googlemapsLink: 'https://maps.app.goo.gl/yTRcY8W9McReL7cY9',
+  id: 'franchecars',
+  name: 'Franche Cars',
+  adress: 'Av. Gaona 1745',
+  city: 'Moreno',
+  email: null,
+  instagram: 'franchecars',
+  facebook: 'https://www.facebook.com/p/Franche-Cars-61572978636399/',
+  whatsapp: ['1181076187'],
+  googlemapsLink: 'https://maps.app.goo.gl/L4R1t4z69jhAqQX77',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d819.1455482826007!2d-58.279763330334234!3d-34.791291996941965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a329002a523f19%3A0x97cca94f30d7153f!2sShine%20cars!5e0!3m2!1sen!2sar!4v1759456008742!5m2!1sen!2sar',
-  openDays: [
-    { title: 'Lunes a Viernes', time: '09:00 a 19:00hs' },
-    { title: 'Sábado', time: '09:00 a 13:00hs' },
-  ],
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31230.796310778325!2d-58.827708974462205!3d-34.63618489833592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc91451707ed2f%3A0xf92cdf0b5f538435!2sAv.%20Gaona%201745%2C%20C1744%20La%20Reja%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1759971148735!5m2!1ses!2sar',
+  openDays: ['Lunes a Sábado', 'Con cita Previa'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -29,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://shinecars.vercel.app/',
-  title: 'Shine Cars - Compra y Venta de Autos',
+  metadataBase: 'https://franchecars.vercel.app/',
+  title: 'Franche Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -40,33 +37,33 @@ export const metadataCompany = {
 export const preguntas = [
   {
     id: 'preg-1',
-    question: '¿Qué documentación necesito para comprar un vehículo?',
+    question: '¿Los vehículos están en condiciones de circular?',
     answer:
-      'Para la compra de un vehículo necesitás DNI, comprobante de ingresos y domicilio. Te asesoramos sobre todos los requisitos específicos según tu situación particular.',
+      'Todos nuestros vehículos son revisados antes de la venta. Consultanos sobre el estado específico del vehículo de tu interés para brindarte información detallada.',
   },
   {
     id: 'preg-2',
-    question: '¿Hacen transferencias de dominio?',
+    question: '¿Puedo ver el vehículo antes de comprarlo?',
     answer:
-      'Sí, nos encargamos de todos los trámites de transferencia de dominio. Te acompañamos en el proceso para que sea lo más simple posible.',
+      'Por supuesto, podés coordinar una visita para ver el vehículo personalmente, realizar pruebas de manejo y verificar todos los detalles que necesites.',
   },
   {
     id: 'preg-3',
-    question: '¿Qué servicios adicionales ofrecen?',
+    question: '¿Qué formas de pago aceptan?',
     answer:
-      'Además de la venta de vehículos, brindamos asesoramiento personalizado, financiación y acompañamiento en todos los trámites necesarios para tu compra.',
+      'Consultanos por los métodos de pago disponibles. Nos adaptamos a diferentes modalidades según cada operación para facilitar tu compra.',
   },
   {
     id: 'preg-4',
-    question: '¿Aceptan vehículos como parte de pago?',
+    question: '¿Los precios publicados son finales?',
     answer:
-      'Sí, evaluamos tu vehículo actual como parte de pago. Contactanos para coordinar una tasación y conocer las condiciones.',
+      'Los precios pueden variar según la forma de pago y condiciones de la operación. Te recomendamos contactarnos directamente para confirmar el valor actualizado.',
   },
   {
     id: 'preg-5',
-    question: '¿Cómo puedo contactarlos?',
+    question: '¿Cómo puedo obtener más información sobre un vehículo?',
     answer:
-      'Podés contactarnos por WhatsApp, visitarnos en nuestro local o a través de nuestras redes sociales. Estamos disponibles para resolver todas tus consultas.',
+      'Podés comunicarte con nosotros por WhatsApp, visitarnos en nuestro local o consultarnos a través de nuestras redes sociales. Estamos para ayudarte.',
   },
 ];
 

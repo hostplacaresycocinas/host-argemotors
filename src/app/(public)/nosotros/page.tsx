@@ -66,7 +66,7 @@ const NosotrosPage = () => {
               viewport={{ once: true }}
               className='order-2 lg:order-1'
             >
-              <div className='bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10 shadow-xl'>
+              <div className='bg-white/5 backdrop-blur rounded-2xl p-8 md:p-10 border border-white/10 shadow-xl'>
                 <div className='space-y-6 text-color-text-light text-lg leading-relaxed'>
                   <div className='flex items-start gap-4'>
                     <div className='w-2 h-2 bg-color-primary rounded-full mt-3 flex-shrink-0'></div>
