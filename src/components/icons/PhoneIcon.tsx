@@ -2,8 +2,8 @@ const LocationZoneIcon = ({ className }: { className: string }) => {
   return (
     <svg
       stroke='currentColor'
-      fill='none'
-      strokeWidth='2'
+      fill='currentColor'
+      strokeWidth='1'
       viewBox='0 0 24 24'
       strokeLinecap='round'
       strokeLinejoin='round'

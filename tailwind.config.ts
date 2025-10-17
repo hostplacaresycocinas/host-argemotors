@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        anton: ['var(--font-anton)', 'sans-serif'],
+        nunito_sans: ['var(--font-nunito_sans)', 'sans-serif'],
         roboto: ['var(--font-roboto)', 'sans-serif'],
       },
       colors: {
@@ -26,9 +26,9 @@ const config: Config = {
         'color-tertiary-dark': '#FBBB17',
         'color-tertiary-light': '#FFE39C',
         'color-bg-primary': '#000000',
-        'color-bg-secondary': '#0C0C0C',
+        'color-bg-secondary': '#0D0D0D',
         'color-bg-secondary-dark': '#000000',
-        'color-bg-secondary-light': '#1E1E1E',
+        'color-bg-secondary-light': '#0D0D0D',
         'color-title': '#1E1E1E',
         'color-title-light': '#ffff',
         'color-text': '#5B616C',

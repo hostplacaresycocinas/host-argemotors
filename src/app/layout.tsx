@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Anton, Roboto } from 'next/font/google';
+import { Nunito_Sans, Roboto } from 'next/font/google';
 import './globals.css';
 import { metadataCompany } from './constants/constants';
 import { ScrollToTopProvider } from '../components/ScrollToTopProvider';
 
-const anton = Anton({
+const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
-  variable: '--font-anton',
+  variable: '--font-nunito_sans',
   weight: ['400'],
 });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body
-        className={`${anton.variable} ${roboto.variable} varible-anton font-roboto bg-color-bg-primary text-color-text text-lg antialiased`}
+        className={`${nunitoSans.variable} ${roboto.variable} varible-nunito_sans font-nunito_sans bg-color-bg-primary text-color-text text-lg antialiased`}
       >
         <ScrollToTopProvider />
         {children}

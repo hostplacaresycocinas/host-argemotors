@@ -1,38 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import { company } from '@/app/constants/constants';
-
-const galleryImages = [
-  {
-    src: '/assets/gallery/gallery-1000-1.webp',
-    alt: 'Imagen 1 Galería',
-  },
-  {
-    src: '/assets/gallery/gallery-1000-2.webp',
-    alt: 'Imagen 2 Galería',
-  },
-  {
-    src: '/assets/gallery/gallery-1000-3.webp',
-    alt: 'Imagen 3 Galería',
-  },
-];
 
 const Gallery = () => {
-  const autoplayOptions = {
-    delay: 3500,
-    stopOnInteraction: false,
-    stopOnMouseEnter: false,
-  };
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay(autoplayOptions),
-  ]);
-  const [clicked, setClicked] = useState(false);
-
   return (
     <section className='mt-10 mb-16 md:mt-16 md:mb-24 relative overflow-hidden'>
       {/* Patrón de fondo sutil */}
@@ -42,60 +14,41 @@ const Gallery = () => {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-3xl md:text-4xl lg:text-5xl text-white mb-4 tracking-wide font-anton uppercase'
+            className='text-3xl md:text-4xl lg:text-5xl text-color-primary-light font-bold leading-tight'
           >
-            Somos{' '}
-            <span className='text-color-primary-light'>{company.name}</span>
+            Variedad de marcas y modelos
+            <br />
+            <span className='text-2xl md:text-3xl lg:text-4xl font-normal text-color-title-light'>
+              para que elijas el que más te guste
+            </span>
           </motion.h2>
-          <div className='w-16 h-1 bg-color-primary mx-auto mb-6'></div>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-white/70 max-w-2xl mx-auto text-lg  leading-relaxed'
-          >
-            Vehículos de calidad garantizada, listos para acompañarte en cada
-            viaje.
-          </motion.p>
         </div>
-        <motion.article
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-          onMouseUp={() => setClicked(false)}
-          onMouseDown={() => setClicked(true)}
-          className={`overflow-hidden relative ${
-            clicked ? 'cursor-grabbing' : 'cursor-grab'
-          }`}
-          ref={emblaRef}
+          className='relative w-full max-w-4xl mx-auto'
         >
-          <div className='flex'>
-            {galleryImages.map((img, idx) => (
-              <div
-                key={idx}
-                className='flex-[0_0_75%] sm:flex-[0_0_65%] md:flex-[0_0_60%] lg:flex-[0_0_65%] mr-3 sm:mr-5 md:mr-8 lg:mr-10'
-              >
-                <div className='relative w-full rounded-lg md:rounded-xl overflow-hidden'>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={1000}
-                    height={800}
-                    className='object-cover w-full h-full'
-                    priority
-                  />
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10'></div>
-                </div>
-              </div>
-            ))}
+          <div className='relative w-full rounded-lg md:rounded-xl overflow-hidden'>
+            <Image
+              src='/assets/gallery/gallery-image.webp'
+              alt='Variedad de marcas de vehículos'
+              width={418}
+              height={741}
+              className='object-cover w-full h-[300px] md:h-[500px] lg:h-[400px] max-w-4xl mx-auto'
+              priority
+            />
+            {/* Máscara con efecto de viñeta */}
+            <div className='absolute bottom-0 right-0 w-full h-24 md:h-40 bg-gradient-to-t from-black to-transparent'></div>
+            <div className='absolute bottom-0 left-0 w-24 md:w-40 h-full bg-gradient-to-r from-black to-transparent'></div>
+            <div className='absolute top-0 right-0 w-full h-24 md:h-40 bg-gradient-to-b from-black to-transparent'></div>
+            <div className='absolute top-0 right-0 w-24 md:w-40 h-full bg-gradient-to-l from-black to-transparent'></div>
+            <div className='absolute bottom-0 right-0 w-full h-full bg-black/50'></div>
           </div>
-          <div className='absolute w-3 sm:w-5 md:w-10 h-full top-0 left-0 bg-gradient-to-r from-color-bg-primary'></div>
-          <div className='absolute w-3 sm:w-5 md:w-10 h-full top-0 right-0 bg-gradient-to-l from-color-bg-primary'></div>
-        </motion.article>
+        </motion.div>
       </div>
     </section>
   );

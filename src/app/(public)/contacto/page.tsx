@@ -9,8 +9,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import PhoneIcon from '@/components/icons/PhoneIcon';
-import LocationStrokeIcon from '@/components/icons/LocationStrokeIcon';
 import FacebookIcon from '@/components/icons/FacebookIcon';
+import LocationIcon from '@/components/icons/LocationIcon';
+import ClockIcon from '@/components/icons/ClockIcon';
 
 const ContactoPage = () => {
   return (
@@ -40,7 +41,7 @@ const ContactoPage = () => {
               company.secondaryColor
                 ? 'text-color-secondary-light'
                 : 'text-color-primary-light'
-            } text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4 lg:mb-6 font-anton uppercase tracking-wide`}
+            } text-2xl md:text-3xl lg:text-4xl mb-3 md:mb-4 lg:mb-6 font-anton tracking-wide`}
           >
             Contacto
           </motion.h1>
@@ -58,195 +59,170 @@ const ContactoPage = () => {
       {/* Información de contacto principal */}
       <section className='py-16 md:py-24'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-          {/* Sección de información principal - Diseño tipo barbershop */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className='mb-16'
-          >
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative'>
-              {/* Líneas divisoras */}
-              <div className='hidden md:block absolute top-0 bottom-0 left-1/3 w-px bg-gray-600/30'></div>
-              <div className='hidden md:block absolute top-0 bottom-0 right-1/3 w-px bg-gray-600/30'></div>
+          {/* Grid principal - Información a la izquierda, Redes a la derecha */}
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16'>
+            {/* Columna izquierda - Información de contacto */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className='bg-color-bg-secondary backdrop-blur-sm rounded-2xl p-8 border border-neutral-800'
+            >
               {/* Ubicación */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className='text-center'
-              >
-                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-3 md:mb-5'>
-                  <LocationStrokeIcon className='w-9 h-9 text-color-primary' />
+              <div className='flex items-center gap-3 mb-6'>
+                <div className='w-12 h-12 bg-color-primary rounded-lg flex items-center justify-center flex-shrink-0'>
+                  <LocationIcon
+                    className={`w-6 h-6 ${
+                      company.dark
+                        ? 'text-color-title-light'
+                        : 'text-color-title'
+                    }`}
+                  />
                 </div>
-                <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
+                <h3 className='text-xl font-bold text-color-title-light'>
                   Ubicación
                 </h3>
-                <a
-                  href={`${company.googlemapsLink}`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-color-text-light mb-4 leading-relaxed hover:text-color-title-light transition-colors'
-                >
-                  {company.adress},
-                  <br />
-                  {company.city}
-                </a>
-              </motion.div>
+              </div>
+              <div className='text-color-text-light block mb-8'>
+                {company.adress}, {company.city}
+              </div>
+
+              {/* Línea divisoria */}
+              <div className='w-full h-[0.5px] bg-color-primary mb-8'></div>
 
               {/* Contacto */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className='text-center'
-              >
-                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-3 md:mb-5'>
-                  <PhoneIcon className='w-9 h-9 text-color-primary' />
+              <div className='flex items-center gap-3 mb-6'>
+                <div className='w-12 h-12 bg-color-primary rounded-lg flex items-center justify-center flex-shrink-0'>
+                  <PhoneIcon
+                    className={`w-6 h-6 ${
+                      company.dark
+                        ? 'text-color-title-light'
+                        : 'text-color-title'
+                    }`}
+                  />
                 </div>
-                <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
+                <h3 className='text-xl font-bold text-color-title-light'>
                   Contacto
                 </h3>
-                <div>
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-color-text-light mb-2 leading-relaxed hover:text-color-title-light transition-colors'
-                  >
-                    {company.whatsapp[0]}
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href={`https://www.instagram.com/${company.instagram}/`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-color-text-light mb-4 leading-relaxed hover:text-color-title-light transition-colors'
-                  >
-                    @{company.instagram}
-                  </a>
-                </div>
-              </motion.div>
+              </div>
+              <div className='space-y-3 mb-8'>
+                <a
+                  href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-color-text-light hover:text-color-primary-light transition-colors block'
+                >
+                  {company.whatsapp[0]}
+                </a>
+                <a
+                  href={`https://www.instagram.com/${company.instagram}/`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-color-text-light hover:text-color-primary-light transition-colors block'
+                >
+                  @{company.instagram}
+                </a>
+              </div>
+
+              {/* Línea divisoria */}
+              <div className='w-full h-[0.5px] bg-color-primary mb-8'></div>
 
               {/* Horarios */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className='text-center'
-              >
-                <div className='w-16 h-16 flex items-center justify-center mx-auto mb-3 md:mb-5'>
-                  <svg
-                    className='w-9 h-9 text-color-primary'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-                    />
-                  </svg>
+              <div className='flex items-center gap-3 mb-6'>
+                <div className='w-12 h-12 bg-color-primary rounded-lg flex items-center justify-center flex-shrink-0'>
+                  <ClockIcon
+                    className={`w-6 h-6 ${
+                      company.dark
+                        ? 'text-color-title-light'
+                        : 'text-color-title'
+                    }`}
+                  />
                 </div>
-                <h3 className='text-white text-xl font-bold mb-4 uppercase tracking-wide'>
+                <h3 className='text-xl font-bold text-color-title-light'>
                   Horarios
                 </h3>
-                <div className='space-y-2 text-color-text-light'>
-                  {company.openDays.map((day, index) => (
-                    <div key={index} className='leading-relaxed'>
-                      <span className='font-medium'>{day}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+              <div className='space-y-2'>
+                {company.openDays.map((day, index) => (
+                  <div key={index} className='text-color-text-light'>
+                    <span className='font-medium'>{day}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-          {/* Sección de redes sociales adicionales */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className='mb-16'
-          >
-            <div className='text-center mb-8'>
-              <h2 className='text-2xl md:text-3xl text-white mb-4 tracking-wide font-anton uppercase'>
-                Seguinos en Redes
-              </h2>
-              <div className='w-16 h-px bg-color-primary mx-auto mb-6'></div>
-            </div>
-
-            <div className='flex justify-center gap-5'>
-              <motion.a
+            {/* Columna derecha - Redes sociales */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className='space-y-6'
+            >
+              {/* WhatsApp */}
+              <a
                 href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
                 target='_blank'
                 rel='noopener noreferrer'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className='group'
+                className='block'
               >
-                <div className='w-14 h-14 bg-color-primary-light rounded-full flex items-center justify-center hover:bg-color-primary-dark transition-colors'>
-                  <WhatsappFillIcon
-                    className={`${
-                      company.dark
-                        ? 'text-color-title-light'
-                        : 'text-color-title'
-                    } w-7 h-7`}
-                  />
+                <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
+                  <div className='flex justify-center mb-4'>
+                    <WhatsappFillIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                  </div>
+                  <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                    WhatsApp
+                  </h3>
+                  <p className=' text-color-text-light text-sm lg:text-base'>
+                    Chatea con nosotros
+                  </p>
                 </div>
-              </motion.a>
+              </a>
 
-              <motion.a
+              {/* Instagram */}
+              <a
                 href={`https://www.instagram.com/${company.instagram}/`}
                 target='_blank'
                 rel='noopener noreferrer'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className='group'
+                className='block'
               >
-                <div className='w-14 h-14 bg-gradient-to-br from-color-primary-light to-color-primary-dark rounded-full flex items-center justify-center hover:from-color-primary-dark hover:to-color-primary-light transition-all'>
-                  <InstagramIcon
-                    className={`${
-                      company.dark
-                        ? 'text-color-title-light'
-                        : 'text-color-title'
-                    } w-7 h-7`}
-                  />
+                <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
+                  <div className='flex justify-center mb-4'>
+                    <InstagramIcon className='w-11 h-11 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                  </div>
+                  <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                    Instagram
+                  </h3>
+                  <p className=' text-color-text-light text-sm lg:text-base'>
+                    @{company.instagram}
+                  </p>
                 </div>
-              </motion.a>
+              </a>
 
-              {company.facebook ? (
-                <motion.a
+              {/* Facebook */}
+              {company.facebook && (
+                <a
                   href={`${company.facebook}`}
                   target='_blank'
                   rel='noopener noreferrer'
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className='group'
+                  className='block'
                 >
-                  <div className='w-14 h-14 bg-gradient-to-br from-color-primary-light to-color-primary-dark rounded-full flex items-center justify-center hover:from-color-primary-dark hover:to-color-primary-light transition-all'>
-                    <FacebookIcon
-                      className={`${
-                        company.dark
-                          ? 'text-color-title-light'
-                          : 'text-color-title'
-                      } w-7 h-7`}
-                    />
+                  <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
+                    <div className='flex justify-center mb-4'>
+                      <FacebookIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                    </div>
+                    <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                      Facebook
+                    </h3>
+                    <p className=' text-color-text-light text-sm lg:text-base'>
+                      Síguenos en Facebook
+                    </p>
                   </div>
-                </motion.a>
-              ) : (
-                ''
+                </a>
               )}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Mapa */}
           <motion.div
