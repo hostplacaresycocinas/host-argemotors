@@ -12,6 +12,7 @@ import PhoneIcon from '@/components/icons/PhoneIcon';
 import FacebookIcon from '@/components/icons/FacebookIcon';
 import LocationIcon from '@/components/icons/LocationIcon';
 import ClockIcon from '@/components/icons/ClockIcon';
+import EmailFillIcon from '@/components/icons/EmailFillIcon';
 
 const ContactoPage = () => {
   return (
@@ -201,7 +202,7 @@ const ContactoPage = () => {
               </a>
 
               {/* Facebook */}
-              {company.facebook && (
+              {company.facebook ? (
                 <a
                   href={`${company.facebook}`}
                   target='_blank'
@@ -216,7 +217,26 @@ const ContactoPage = () => {
                       Facebook
                     </h3>
                     <p className=' text-color-text-light text-sm lg:text-base'>
-                      Síguenos en Facebook
+                      Seguinos en Facebook
+                    </p>
+                  </div>
+                </a>
+              ) : (
+                <a
+                  href={`mailto:${company.email}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='block'
+                >
+                  <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
+                    <div className='flex justify-center mb-4'>
+                      <EmailFillIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                    </div>
+                    <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                      Email
+                    </h3>
+                    <p className=' text-color-text-light text-sm lg:text-base'>
+                      Envíanos un email
                     </p>
                   </div>
                 </a>

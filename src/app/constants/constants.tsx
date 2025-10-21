@@ -12,7 +12,7 @@ export const company = {
   city: 'Rosario',
   email: 'pablotodesco@gmail.com',
   instagram: 'autodesco',
-  facebook: 'https://www.facebook.com/AUTODESCO',
+  facebook: null,
   whatsapp: ['3415852687'],
   googlemapsLink: 'https://maps.app.goo.gl/TvW5Qkdy3U5PX3np9',
   googlemaps:
