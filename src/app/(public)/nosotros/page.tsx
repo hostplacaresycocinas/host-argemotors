@@ -89,8 +89,7 @@ const NosotrosPage = () => {
               viewport={{ once: true }}
               className='space-y-8 max-w-lg md:max-w-2xl mx-auto'
             >
-              <div className='flex items-center gap-2 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6'>
-                <span className='text-color-title-light'>Somos</span>
+              <div className='flex items-center gap-2 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6'>
                 <h1 className=' text-color-primary-light'>{company.name}</h1>
               </div>
 
