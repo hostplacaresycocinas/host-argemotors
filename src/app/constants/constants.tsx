@@ -6,18 +6,18 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'autodesco',
-  name: 'Autodesco',
-  adress: 'Ituzaingó 1181',
-  city: 'Rosario',
-  email: 'pablotodesco@gmail.com',
-  instagram: 'autodesco',
-  facebook: null,
-  whatsapp: ['3415852687'],
-  googlemapsLink: 'https://maps.app.goo.gl/TvW5Qkdy3U5PX3np9',
+  id: 'martinicorenautomotores',
+  name: 'Martinicorena Automotores',
+  adress: 'Av. San Martin 1447',
+  city: 'Las Flores',
+  email: 'fedemartinicorena48@hotmail.com',
+  instagram: 'martinicorenautomotores',
+  facebook: 'https://www.facebook.com/martinicorenaautomotores/',
+  whatsapp: ['2241465595'],
+  googlemapsLink: 'https://maps.app.goo.gl/5uDPWmPUpEorsooe8',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.635565703559!2d-60.64536232294897!3d-32.96062987259751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab08dec9a69b%3A0x3249b93179396971!2sAutodesco!5e0!3m2!1ses-419!2sar!4v1760011215322!5m2!1ses-419!2sar',
-  openDays: ['Lunes a Viernes 9 a 13 y 15 a 19hs', 'Sábado y Domingo Cerrado'],
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3226.7255595376287!2d-59.0872289!3d-36.0269946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9597cac085716915%3A0x5a61c8621f671203!2sMartinicorena%20Automotores!5e0!3m2!1sen!2sar!4v1761068660607!5m2!1sen!2sar',
+  openDays: ['Lunes a Viernes 09:00 a 20:30hs', 'Sábado 09:00 a 13:00hs'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -26,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://autodesco.vercel.app/',
-  title: 'Autodesco - Compra y Venta de Autos',
+  metadataBase: 'https://martinicorenautomotores.vercel.app/',
+  title: 'Martinicorena Automotores - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
