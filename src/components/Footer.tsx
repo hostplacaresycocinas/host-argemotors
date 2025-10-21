@@ -84,7 +84,7 @@ const Footer = () => {
                 Contacto
                 <div className='absolute -bottom-2 left-1/2 md:left-0 transform md:transform-none -translate-x-1/2 w-16 h-0.5 bg-color-primary rounded-full'></div>
               </h3>
-              <div className='space-y-6'>
+              <div className='space-y-6 flex flex-col items-center md:items-start'>
                 {/* Dirección */}
                 {(company.adress || company.city) && (
                   <Link
@@ -153,7 +153,7 @@ const Footer = () => {
                     href={`https://www.instagram.com/${company.instagram}/`}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='flex items-center gap-4 group'
+                    className='flex items-center gap-2 group'
                   >
                     <div className='w-12 h-12 rounded-full bg-color-primary/20 flex items-center justify-center group-hover:bg-color-primary/30 transition-colors'>
                       <InstagramIcon className='w-6 h-6 text-color-primary' />
@@ -168,7 +168,7 @@ const Footer = () => {
                     href={`${company.facebook}`}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='flex items-center gap-4 group'
+                    className='flex items-center gap-2 group'
                   >
                     <div className='w-12 h-12 rounded-full bg-color-primary/20 flex items-center justify-center group-hover:bg-color-primary/30 transition-colors'>
                       <FacebookIcon className='w-6 h-6 text-color-primary' />
