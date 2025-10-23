@@ -8,6 +8,7 @@ const CompromisoIcon = ({ className }: { className?: string }) => {
       viewBox='0 0 400 255.11'
       className={` ${className}`}
       xmlSpace='preserve'
+      fill='currentColor'
     >
       <g>
         <path

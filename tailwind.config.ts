@@ -14,9 +14,9 @@ const config: Config = {
         roboto: ['var(--font-roboto)', 'sans-serif'],
       },
       colors: {
-        'color-primary': '#FFD634',
-        'color-primary-dark': '#FFCC00',
-        'color-primary-light': '#FFD83D',
+        'color-primary': '#F31212',
+        'color-primary-dark': '#E50000',
+        'color-primary-light': '#FF2626',
         'color-primary-admin': '#E9262C',
         'color-primary-dark-admin': '#F0161C',
         'color-secondary': '#144BFF',
