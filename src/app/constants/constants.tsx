@@ -1,23 +1,23 @@
 export const company = {
-  dark: true,
+  dark: false,
   darkmode: true,
   shortAdress: true,
   favicon: false,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'martinicorenautomotores',
-  name: 'Martinicorena Automotores',
-  adress: 'Av. San Martin 1447',
-  city: 'Las Flores',
-  email: 'fedemartinicorena48@hotmail.com',
-  instagram: 'martinicorenautomotores',
-  facebook: 'https://www.facebook.com/martinicorenaautomotores/',
-  whatsapp: ['2241465595'],
-  googlemapsLink: 'https://maps.app.goo.gl/5uDPWmPUpEorsooe8',
+  id: 'quevedoautomotores',
+  name: 'Quevedo Automotores',
+  adress: 'Emilio Caraffa 2321',
+  city: 'Córdoba',
+  email: 'quevedoautomotores@gmail.com',
+  instagram: 'quevedoautomotores1',
+  facebook: 'https://www.facebook.com/quevedoautomotores/',
+  whatsapp: ['3515161741', '3415032898'],
+  googlemapsLink: 'https://maps.app.goo.gl/3Sn8vcstCsCKLR7v9',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3226.7255595376287!2d-59.0872289!3d-36.0269946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9597cac085716915%3A0x5a61c8621f671203!2sMartinicorena%20Automotores!5e0!3m2!1sen!2sar!4v1761068660607!5m2!1sen!2sar',
-  openDays: ['Lunes a Viernes 09:00 a 20:30hs', 'Sábado 09:00 a 13:00hs'],
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.916440394773!2d-64.21304572317032!3d-31.388867474274385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943299964c4294cb%3A0x34de99a75ce2aeaf!2sQuevedo%20automotores!5e0!3m2!1ses-419!2sar!4v1762703009858!5m2!1ses-419!2sar',
+  openDays: ['Lunes a Viernes 09:30 a 18:30hs', 'Sábado 09:30 a 13:30hs'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -26,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://martinicorenautomotores.vercel.app/',
-  title: 'Martinicorena Automotores - Compra y Venta de Autos',
+  metadataBase: 'https://quevedoautomotores.vercel.app/',
+  title: 'Quevedo Automotores - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
