@@ -108,10 +108,6 @@ const Proceso = () => {
                 {/* Overlay sutil */}
                 <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
               </div>
-
-              {/* Elementos decorativos */}
-              <div className='absolute -top-4 -right-4 w-24 h-24 bg-red-500/20 rounded-full blur-xl'></div>
-              <div className='absolute -bottom-4 -left-4 w-32 h-32 bg-red-500/10 rounded-full blur-2xl'></div>
             </div>
           </motion.div>
         </div>

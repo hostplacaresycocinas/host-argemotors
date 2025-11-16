@@ -6,18 +6,18 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'quevedoautomotores',
-  name: 'Quevedo Automotores',
-  adress: 'Emilio Caraffa 2321',
-  city: 'Córdoba',
-  email: 'quevedoautomotores@gmail.com',
-  instagram: 'quevedoautomotores1',
-  facebook: 'https://www.facebook.com/quevedoautomotores/',
-  whatsapp: ['3515161741', '3415032898'],
-  googlemapsLink: 'https://maps.app.goo.gl/3Sn8vcstCsCKLR7v9',
+  id: 'argemotors',
+  name: 'ArgeMotors',
+  adress: 'Av. Nazca 1487',
+  city: 'Villa Del Parque',
+  email: 'argemotors@gmail.com',
+  instagram: 'argemotors',
+  facebook: 'https://www.facebook.com/p/argemotors-100064369890273/',
+  whatsapp: ['1168509992', '1131984041'],
+  googlemapsLink: 'https://maps.app.goo.gl/AiMtsEh1rLktqdCaA',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.916440394773!2d-64.21304572317032!3d-31.388867474274385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943299964c4294cb%3A0x34de99a75ce2aeaf!2sQuevedo%20automotores!5e0!3m2!1ses-419!2sar!4v1762703009858!5m2!1ses-419!2sar',
-  openDays: ['Lunes a Viernes 09:30 a 18:30hs', 'Sábado 09:30 a 13:30hs'],
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5133607997764!2d-58.47951372307988!3d-34.616465172949674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc90047a10277%3A0xb13be49a62813dc0!2sArgemotors!5e0!3m2!1ses-419!2sar!4v1763065454996!5m2!1ses-419!2sar',
+  openDays: ['Lunes a Viernes 09:00 a 18:00hs', 'Sábado 09:00 a 13:00hs'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -26,8 +26,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://quevedoautomotores.vercel.app/',
-  title: 'Quevedo Automotores - Compra y Venta de Autos',
+  metadataBase: 'https://argemotors.vercel.app/',
+  title: 'ArgeMotors - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
