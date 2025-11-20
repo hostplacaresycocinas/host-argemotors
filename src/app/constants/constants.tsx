@@ -13,7 +13,7 @@ export const company = {
   email: 'argemotors@gmail.com',
   instagram: 'argemotors',
   facebook: 'https://www.facebook.com/p/argemotors-100064369890273/',
-  whatsapp: ['1168509992', '1131984041'],
+  whatsapp: ['1139006610', '1168509992'],
   googlemapsLink: 'https://maps.app.goo.gl/AiMtsEh1rLktqdCaA',
   googlemaps:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5133607997764!2d-58.47951372307988!3d-34.616465172949674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc90047a10277%3A0xb13be49a62813dc0!2sArgemotors!5e0!3m2!1ses-419!2sar!4v1763065454996!5m2!1ses-419!2sar',
