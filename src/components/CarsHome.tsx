@@ -5,51 +5,44 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { company } from '@/app/constants/constants';
-import data from '@/data/data.json';
+import { company, BASE_URL_MELI, TENANT_MELI } from '@/app/constants/constants';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
-interface Imagen {
-  id: string;
-  carId: string;
-  imageUrl: string;
-  thumbnailUrl: string;
+interface FirstImage {
+  s3ImageUrl: string;
+  s3ThumbnailUrl: string;
   order: number;
-  createdAt: string;
-  updatedAt: string;
 }
 
-interface Categoria {
+interface ApiCar {
   id: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface Auto {
-  id: string;
+  credentialId: string;
+  itemId: string;
+  title: string;
+  status: string;
+  categoryId: string;
+  price: string;
+  availableQuantity: number;
+  soldQuantity: number;
+  condition: string;
+  listingTypeId: string;
+  permalink: string;
+  thumbnailUrl: string;
+  currencyId: string;
+  lastSyncedAt: string;
   brand: string;
   model: string;
   year: number;
-  color: string;
-  price: {
-    valor: number;
-    moneda: string;
-  };
-  description: string;
-  position: number;
-  featured: boolean;
-  favorite: boolean;
-  active: boolean;
-  categoryId: string;
-  mileage: number;
+  kilometers: number | null;
+  fuelType: string;
   transmission: string;
-  fuel: string;
   doors: number;
+  color: string;
+  engineSize: string;
+  attributes: string;
   createdAt: string;
   updatedAt: string;
-  Images: Imagen[];
-  Category: Categoria;
+  firstImage: FirstImage;
 }
 
 interface CarsHomeProps {
@@ -66,61 +59,37 @@ const CarsHome = ({ title }: CarsHomeProps) => {
     }),
   ]);
   const [clicked, setClicked] = useState(false);
-  const [vehiculos, setVehiculos] = useState<Auto[]>([]);
+  const [vehiculos, setVehiculos] = useState<ApiCar[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadVehiculos = () => {
+    const loadVehiculos = async () => {
       setLoading(true);
       try {
-        // Filtrar vehículos que tienen imágenes
-        const vehiculosConImagenes = data.cars.filter(
-          (auto) => auto.images && auto.images.length > 0
+        const params = new URLSearchParams();
+        params.append('tenant', TENANT_MELI);
+        params.append('page', '1');
+        params.append('limit', '10');
+
+        const response = await fetch(
+          `${BASE_URL_MELI}/api/items?${params.toString()}`
         );
 
-        const vehiculosProcesados = vehiculosConImagenes
-          .slice(0, 6) // Máximo 6 vehículos
-          .map((auto) => ({
-            id: auto.id,
-            brand: auto.brand,
-            model: auto.mlTitle,
-            year: auto.year,
-            color: auto.color,
-            price: {
-              valor: auto.price,
-              moneda: auto.currency,
-            },
-            description: auto.description,
-            position: auto.position,
-            featured: auto.featured,
-            favorite: auto.favorite,
-            active: auto.active,
-            categoryId: auto.categoryId,
-            mileage: auto.mileage,
-            transmission: auto.transmission,
-            fuel: auto.fuel,
-            doors: auto.doors,
-            createdAt: auto.createdAt,
-            updatedAt: auto.updatedAt,
-            Images: auto.images.map((img, index) => ({
-              id: `${auto.id}-img-${index}`,
-              carId: auto.id,
-              imageUrl: img.thumbnailUrl,
-              thumbnailUrl: img.thumbnailUrl,
-              order: index,
-              createdAt: auto.createdAt,
-              updatedAt: auto.updatedAt,
-            })),
-            Category: {
-              id: auto.Category.id,
-              name: auto.Category.name,
-              createdAt: auto.createdAt,
-              updatedAt: auto.updatedAt,
-            },
-          }));
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
+        }
 
-        setVehiculos(vehiculosProcesados);
+        const data = await response.json();
+
+        const filteredCars = (data.items || []).filter(
+          (car: ApiCar) =>
+            car.firstImage &&
+            car.firstImage.s3ThumbnailUrl &&
+            car.status === 'active'
+        );
+
+        setVehiculos(filteredCars);
       } catch (err) {
         console.error('Error al cargar vehículos:', err);
         setError('No se pudieron cargar los vehículos');
@@ -230,13 +199,13 @@ const CarsHome = ({ title }: CarsHomeProps) => {
             {/* Vehículos */}
             {vehiculos.map((auto) => (
               <Link
-                href={`/catalogo/${auto.id}`}
+                href={`/catalogo/${auto.itemId}`}
                 className='w-full relative overflow-hidden flex-[0_0_75%] min-[500px]:flex-[0_0_55%] sm:flex-[0_0_40%] lg:flex-[0_0_30%] xl:flex-[0_0_26%] ml-6 sm:ml-7 md:ml-8'
                 key={auto.id}
               >
                 {/* Card container con borde que se ilumina */}
                 <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-[0_8px_30px_-10px_rgba(233,0,2,0.2)] select-none'>
-                  {!auto.active && (
+                  {auto.status !== 'active' && (
                     <div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center z-20'>
                       <span className='bg-red-500 text-white text-base font-medium px-3 py-1.5 rounded'>
                         Pausado
@@ -261,10 +230,10 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                           objectPosition: `center ${company.objectCover}`,
                         }}
                         src={
-                          auto.Images.sort((a, b) => a.order - b.order)[0]
-                            ?.thumbnailUrl || '/assets/placeholder.webp'
+                          auto.firstImage?.s3ThumbnailUrl ||
+                          '/assets/placeholder.webp'
                         }
-                        alt={`${auto.model}`}
+                        alt={`${auto.title || auto.model || 'Vehículo'}`}
                       />
                     </motion.div>
 
@@ -316,7 +285,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                             : 'group-hover:text-color-primary'
                         } text-color-title-light text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
-                        {auto.model}
+                        {auto.title || auto.model || 'Sin título'}
                       </h3>
 
                       <div
@@ -324,13 +293,19 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                           company.price ? '' : 'hidden'
                         } text-color-primary text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
-                        {auto.price.moneda === 'ARS' ? '$' : 'US$'}
-                        {auto.price.valor.toLocaleString('es-ES')}
+                        {auto.price && parseFloat(auto.price) > 0 ? (
+                          <>
+                            {auto.currencyId === 'ARS' ? '$' : 'US$'}
+                            {parseFloat(auto.price).toLocaleString('es-ES')}
+                          </>
+                        ) : (
+                          'Consultar precio'
+                        )}
                       </div>
 
                       {/* Diseño minimalista con separadores tipo | */}
                       <div className='flex flex-wrap items-center text-color-text-light font-medium'>
-                        <span className=''>{auto.brand}</span>
+                        <span className=''>{auto.brand || 'Sin marca'}</span>
                         <span
                           className={`${
                             company.dark
@@ -340,20 +315,24 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                         >
                           |
                         </span>
-                        <span>{auto.year}</span>
+                        <span>{auto.year || 'Sin año'}</span>
                       </div>
 
                       {/* Precio o etiqueta destacada */}
                       <div className='flex justify-between items-center text-color-text-light mt-0.5'>
-                        {auto.mileage === 0 ? (
+                        {auto.kilometers === 0 ? (
                           <span className='text-base font-medium uppercase tracking-wider text-color-primary'>
                             Nuevo <span className='text-color-primary'>•</span>{' '}
-                            {auto.mileage.toLocaleString('es-ES')} km
+                            {auto.kilometers.toLocaleString('es-ES')} km
+                          </span>
+                        ) : auto.kilometers && auto.kilometers > 0 ? (
+                          <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
+                            Usado <span className='text-color-primary'>•</span>{' '}
+                            {auto.kilometers.toLocaleString('es-ES')} km
                           </span>
                         ) : (
                           <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
-                            Usado <span className='text-color-primary'>•</span>{' '}
-                            {auto.mileage.toLocaleString('es-ES')} km
+                            {auto.kilometers === 0 ? 'Nuevo' : 'Usado'}
                           </span>
                         )}
                       </div>

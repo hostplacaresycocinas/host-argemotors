@@ -23,7 +23,11 @@ export const company = {
 };
 
 export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
-export const TENANT = 'accotto-automotores';
+export const TENANT = 'null';
+export const TENANT_PUBLIC = 'null';
+
+export const BASE_URL_MELI = 'https://onlymotors-ml.agenciagrvity.com';
+export const TENANT_MELI = '65a61dbd-8fa1-4b2b-acad-946c07a2fae1';
 
 export const metadataCompany = {
   metadataBase: 'https://argemotors.com.ar/',

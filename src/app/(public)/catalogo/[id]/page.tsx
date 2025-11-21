@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ArrowIcon from '@/components/icons/ArrowIcon';
 import WhatsappIcon from '@/components/icons/WhatsappIcon';
-import { company } from '@/app/constants/constants';
+import { company, BASE_URL_MELI, TENANT_MELI } from '@/app/constants/constants';
 import ImageGalleryModal from '@/components/ImageGalleryModal';
 import useEmblaCarousel from 'embla-carousel-react';
 import DropDownIcon from '@/components/icons/DropDownIcon';
@@ -14,45 +14,50 @@ import CarrouselRelated from '@/components/CarrouselRelated';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import data from '@/data/data.json';
 import ShareMenu from '@/components/ShareMenu';
 import { capitalizeFirstLetter } from '@/lib/utils';
 
+interface Imagen {
+  s3ImageUrl: string;
+  s3ThumbnailUrl: string;
+  order: number;
+}
+
 interface ApiCar {
   id: string;
+  credentialId: string;
+  itemId: string;
+  title: string;
+  status: string;
+  categoryId: string;
+  category: string | null;
+  price: string;
+  availableQuantity: number;
+  soldQuantity: number;
+  condition: string;
+  listingTypeId: string;
+  permalink: string;
+  thumbnailUrl: string;
+  currencyId: string;
+  lastSyncedAt: string;
   brand: string;
   model: string;
   year: number;
-  color: string;
-  price: {
-    valor: number;
-    moneda: string;
-  };
-  description: string;
-  categoryId: string;
-  mileage: number;
-  motor: string | null;
-  transmission: string | null;
-  fuel: string;
+  kilometers: number | null;
+  fuelType: string;
+  transmission: string;
   doors: number;
-  position: number;
-  featured: boolean;
-  favorite: boolean;
-  active: boolean;
+  color: string;
+  engineSize: string;
+  attributes: string;
+  description: string;
   createdAt: string;
   updatedAt: string;
-  Category: {
-    id: string;
-    name: string;
-    createdAt: string;
-    updatedAt: string;
-  };
-  Images: {
-    thumbnailUrl: string;
-    imageUrl: string;
-    order: number;
-  }[];
+  images: Imagen[];
 }
+
+const formatCategoryName = (value: string | null) =>
+  value ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase() : '';
 
 export default function AutoDetailPage() {
   const { id } = useParams();
@@ -67,19 +72,29 @@ export default function AutoDetailPage() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [modalStartIndex, setModalStartIndex] = useState(0);
-  const [orderedImages, setOrderedImages] = useState<ApiCar['Images']>([]);
+  const [orderedImages, setOrderedImages] = useState<Imagen[]>([]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (embla) {
+        embla.scrollTo(index);
+        setSelectedIndex(index);
+      }
+    },
+    [embla]
+  );
 
   const scrollPrev = useCallback(() => {
-    if (embla) {
-      embla.scrollPrev();
+    if (embla && selectedIndex > 0) {
+      scrollTo(selectedIndex - 1);
     }
-  }, [embla]);
+  }, [embla, selectedIndex, scrollTo]);
 
   const scrollNext = useCallback(() => {
-    if (embla) {
-      embla.scrollNext();
+    if (embla && car && selectedIndex < (car.images?.length ?? 0) - 1) {
+      scrollTo(selectedIndex + 1);
     }
-  }, [embla]);
+  }, [embla, selectedIndex, car, scrollTo]);
 
   // Manejar las teclas de flecha
   useEffect(() => {
@@ -106,55 +121,38 @@ export default function AutoDetailPage() {
   }, [embla]);
 
   useEffect(() => {
-    const fetchCar = () => {
+    const fetchCar = async () => {
+      setLoading(true);
       try {
-        const carData = data.cars.find((car) => car.id === id);
+        const response = await fetch(
+          `${BASE_URL_MELI}/api/items/${id}?tenant=${TENANT_MELI}`
+        );
 
-        if (!carData) {
-          throw new Error('Vehículo no encontrado');
+        if (!response.ok) {
+          if (response.status === 404) {
+            throw new Error('Vehículo no encontrado');
+          }
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
 
-        // Transformar los datos al formato esperado
-        const auto = {
-          id: carData.id,
-          brand: carData.brand,
-          model: carData.mlTitle,
-          year: carData.year,
-          color: carData.color,
-          price: {
-            valor: carData.price,
-            moneda: carData.currency,
-          },
-          description: carData.description,
-          categoryId: carData.categoryId,
-          mileage: carData.mileage,
-          motor: carData.mlEngine,
-          transmission: carData.transmission,
-          fuel: carData.fuel,
-          doors: carData.doors,
-          position: carData.position,
-          featured: carData.featured,
-          favorite: carData.favorite,
-          active: carData.active,
-          createdAt: carData.createdAt,
-          updatedAt: carData.updatedAt,
-          Category: {
-            id: carData.Category.id,
-            name: carData.Category.name,
-            createdAt: carData.createdAt,
-            updatedAt: carData.updatedAt,
-          },
-          Images: carData.images.map((img, index) => ({
-            thumbnailUrl: img.thumbnailUrl,
-            imageUrl: img.imageUrl,
-            order: index,
-          })),
-        };
+        const data: ApiCar = await response.json();
 
-        // Ordenar las imágenes por el campo order
-        const sortedImages = [...auto.Images].sort((a, b) => a.order - b.order);
-        setOrderedImages(sortedImages);
-        setCar({ ...auto, Images: sortedImages });
+        const sortedImages = (data.images || [])
+          .slice()
+          .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+        const normalizedImages = sortedImages.length
+          ? sortedImages
+          : [
+              {
+                s3ImageUrl: '/assets/placeholder.webp',
+                s3ThumbnailUrl: '/assets/placeholder.webp',
+                order: 0,
+              },
+            ];
+
+        setOrderedImages(normalizedImages);
+        setCar({ ...data, images: normalizedImages });
       } catch (error) {
         setError(
           error instanceof Error ? error.message : 'Error al cargar el vehículo'
@@ -164,8 +162,17 @@ export default function AutoDetailPage() {
       }
     };
 
-    fetchCar();
+    if (id) {
+      fetchCar();
+    }
   }, [id]);
+
+  useEffect(() => {
+    if (orderedImages.length > 0) {
+      setSelectedIndex(0);
+      embla?.scrollTo(0);
+    }
+  }, [orderedImages, embla]);
 
   const renderContent = () => {
     if (loading) {
@@ -250,14 +257,20 @@ export default function AutoDetailPage() {
                   Catálogo
                 </p>
               </Link>
-              <DropDownIcon className='w-2.5 h-2.5 -rotate-90 text-color-text-light' />
-              <Link
-                href={`/catalogo?categoria=${car.Category.name.toLowerCase()}`}
-              >
-                <p className='text-color-text-light hover:text-color-primary transition-colors'>
-                  {capitalizeFirstLetter(car.Category.name)}
-                </p>
-              </Link>
+              {car.category && (
+                <>
+                  <DropDownIcon className='w-2.5 h-2.5 -rotate-90 text-color-text-light' />
+                  <Link
+                    href={`/catalogo?categoria=${encodeURIComponent(
+                      car.category.toLowerCase()
+                    )}`}
+                  >
+                    <p className='text-color-text-light hover:text-color-primary transition-colors'>
+                      {formatCategoryName(car.category)}
+                    </p>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -270,7 +283,7 @@ export default function AutoDetailPage() {
               {/* Imagen principal */}
               <div className='relative mb-3'>
                 {/* Botones de navegación para la imagen principal */}
-                {car.Images.length > 1 && (
+                {car.images.length > 1 && (
                   <>
                     <button
                       onClick={scrollPrev}
@@ -290,9 +303,9 @@ export default function AutoDetailPage() {
                 )}
 
                 {/* Indicador de posición */}
-                {car.Images.length > 1 && (
+                {car.images.length > 1 && (
                   <div className='absolute bottom-4 right-4 bg-color-bg-secondary text-color-title-light px-3 py-2 rounded-full text-base font-medium shadow-lg z-10'>
-                    {selectedIndex + 1}/{car.Images.length}
+                    {selectedIndex + 1}/{car.images.length}
                   </div>
                 )}
 
@@ -321,7 +334,7 @@ export default function AutoDetailPage() {
                             className='w-full h-full flex items-center justify-center'
                           >
                             <Image
-                              src={image.imageUrl}
+                              src={image.s3ImageUrl}
                               alt={`${car.model} - Imagen ${index + 1}`}
                               fill
                               className='object-cover'
@@ -336,7 +349,7 @@ export default function AutoDetailPage() {
                           {/* Overlay de sombra al hacer hover */}
                           <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
 
-                          {!car.active && (
+                          {car.status !== 'active' && (
                             <div className='absolute inset-0 bg-black/70 flex items-center justify-center'>
                               <span className='bg-red-500 text-white text-xl md:text-2xl font-medium px-6 py-4 md:px-10 md:py-5 rounded-full'>
                                 Pausado
@@ -351,12 +364,12 @@ export default function AutoDetailPage() {
               </div>
 
               {/* Miniaturas - grid de 3 columnas, ocultas en mobile */}
-              {car.Images.length > 1 && (
+              {car.images.length > 1 && (
                 <div className='hidden md:grid grid-cols-3 gap-3'>
                   {orderedImages.slice(1, 4).map((image, index) => {
                     const actualIndex = index + 1; // Índice real en el array (1, 2, 3)
                     const isLastThumbnail = index === 2;
-                    const hasMoreImages = car.Images.length > 4;
+                    const hasMoreImages = car.images.length > 4;
                     const shouldShowBlur = isLastThumbnail && hasMoreImages;
 
                     return (
@@ -385,7 +398,7 @@ export default function AutoDetailPage() {
                         >
                           <Image
                             priority
-                            src={image.thumbnailUrl}
+                            src={image.s3ThumbnailUrl}
                             alt={`${car.model} - Miniatura ${actualIndex + 1}`}
                             fill
                             sizes='(max-width: 768px) 33vw, 200px'
@@ -406,7 +419,7 @@ export default function AutoDetailPage() {
                           <div className='absolute inset-0 bg-black/40 flex items-center justify-center'>
                             <div className='text-center text-white'>
                               <div className='text-3xl font-bold'>
-                                +{car.Images.length - 4}
+                                +{car.images.length - 4}
                               </div>
                             </div>
                           </div>
@@ -443,7 +456,7 @@ export default function AutoDetailPage() {
                 <div className='relative z-10 p-6 bg-color-bg-secondary border border-neutral-600 rounded-lg shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)]'>
                   <div className=' mb-3 md:mb-4 lg:mb-6'>
                     <h1 className='text-xl md:text-2xl font-semibold text-color-title-light line-clamp-3'>
-                      {car.model}
+                      {car.title || car.model}
                     </h1>
                     <div className='flex flex-wrap items-center gap-2 text-base text-color-text-light mt-2'>
                       <span className='font-medium text-color-text-light'>
@@ -453,52 +466,56 @@ export default function AutoDetailPage() {
                       <span className='font-medium text-color-text-light'>
                         {car.year}
                       </span>
-                      <span className='text-color-primary'>•</span>
-                      <span className='font-medium text-color-text-light'>
-                        {capitalizeFirstLetter(car.Category.name)}
-                      </span>
+                      {car.category && (
+                        <>
+                          <span className='text-color-primary'>•</span>
+                          <span className='font-medium text-color-text-light'>
+                            {formatCategoryName(car.category)}
+                          </span>
+                        </>
+                      )}
                     </div>
                   </div>
 
                   {/* Precio */}
-                  {car.price && car.price.valor > 0 ? (
+                  {car.price && parseFloat(car.price) > 0 ? (
                     <div
                       className={`${
                         company.price ? '' : 'hidden'
                       } text-2xl font-bold text-color-primary mb-2 md:mb-4`}
                     >
-                      {car.price.moneda === 'ARS' ? '$' : 'US$'}
-                      {car.price.valor.toLocaleString('es-ES')}
+                      {car.currencyId === 'ARS' ? '$' : 'US$'}
+                      {parseFloat(car.price).toLocaleString('es-ES')}
                     </div>
-                  ) : (
-                    ''
-                  )}
+                  ) : null}
 
                   <div className='grid grid-cols-2 md:grid-cols-3 gap-4 text-color-text-light mb-6'>
-                    <div>
-                      <p className='text-color-text-light text-base font-medium'>
-                        Kilometraje
-                      </p>
-                      <p
-                        className={`font-medium ${
-                          car.mileage === 0
-                            ? 'text-color-primary font-semibold'
-                            : 'text-color-title-light'
-                        }`}
-                      >
-                        {car.mileage.toLocaleString('es-AR')} km
-                      </p>
-                    </div>
-                    {car.motor && (
+                    {car.kilometers !== null && car.kilometers >= 0 ? (
+                      <div>
+                        <p className='text-color-text-light text-base font-medium'>
+                          Kilometraje
+                        </p>
+                        <p
+                          className={`font-medium ${
+                            car.kilometers === 0
+                              ? 'text-color-primary font-semibold'
+                              : 'text-color-title-light'
+                          }`}
+                        >
+                          {car.kilometers.toLocaleString('es-AR')} km
+                        </p>
+                      </div>
+                    ) : null}
+                    {car.engineSize ? (
                       <div className='flex flex-col gap-1'>
                         <p className='text-color-text-light text-base font-medium'>
                           Motor
                         </p>
                         <p className='text-color-title-light font-medium'>
-                          {car.motor}
+                          {car.engineSize}
                         </p>
                       </div>
-                    )}
+                    ) : null}
                     <div className='flex flex-col gap-1'>
                       <p className='text-color-text-light text-base font-medium'>
                         Año
@@ -507,7 +524,7 @@ export default function AutoDetailPage() {
                         {car.year}
                       </p>
                     </div>
-                    {car.transmission && (
+                    {car.transmission ? (
                       <div>
                         <p className='text-color-text-light text-base font-medium'>
                           Transmisión
@@ -516,15 +533,17 @@ export default function AutoDetailPage() {
                           {car.transmission}
                         </p>
                       </div>
-                    )}
-                    <div>
-                      <p className='text-color-text-light text-base font-medium'>
-                        Combustible
-                      </p>
-                      <p className='text-color-title-light font-medium'>
-                        {car.fuel}
-                      </p>
-                    </div>
+                    ) : null}
+                    {car.fuelType ? (
+                      <div>
+                        <p className='text-color-text-light text-base font-medium'>
+                          Combustible
+                        </p>
+                        <p className='text-color-title-light font-medium'>
+                          {car.fuelType}
+                        </p>
+                      </div>
+                    ) : null}
                     {car.doors ? (
                       <div>
                         <p className='text-color-text-light text-base font-medium'>
@@ -534,16 +553,18 @@ export default function AutoDetailPage() {
                           {car.doors}
                         </p>
                       </div>
-                    ) : (
-                      ''
-                    )}
+                    ) : null}
                   </div>
 
                   {/* Botones de acción */}
-                  {car.active && (
+                  {car.status === 'active' && (
                     <div className='flex flex-col gap-3 mt-3 '>
                       <Link
-                        href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería consultar por ${car.model}`}
+                        href={`https://api.whatsapp.com/send?phone=549${
+                          company.whatsapp[0]
+                        }&text=Hola! Quería consultar por ${
+                          car.title || car.model
+                        }`}
                         target='_blank'
                         rel='noopener noreferrer'
                         className={`w-full h-12 bg-color-primary hover:bg-color-primary-dark flex gap-2 font-medium rounded text-center transition-colors justify-center items-center ${
@@ -562,7 +583,7 @@ export default function AutoDetailPage() {
                               ? window.location.href
                               : ''
                           }
-                          title={`${car.model} ${car.year}`}
+                          title={`${car.title || car.model} ${car.year}`}
                         />
                       </div>
                     </div>
@@ -588,7 +609,7 @@ export default function AutoDetailPage() {
         {/* Modal de galería */}
         {showModal && (
           <ImageGalleryModal
-            images={orderedImages.map((img) => img.imageUrl)}
+            images={orderedImages.map((img) => img.s3ImageUrl)}
             currentIndex={modalStartIndex}
             productId={car.id}
             marcaId={car.brand.toLowerCase()}
@@ -600,7 +621,7 @@ export default function AutoDetailPage() {
           {/* Carrusel de vehículos relacionados */}
           <CarrouselRelated
             title='Recomendados'
-            currentCarId={car.id}
+            currentCarId={car.itemId}
             categoryId={car.categoryId}
           />
         </section>
