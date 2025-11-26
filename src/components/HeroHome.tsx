@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import HeroCarousel from './HeroCarousel';
 import { motion } from 'framer-motion';
 import { company } from '@/app/constants/constants';
@@ -13,7 +14,7 @@ const HeroHome = () => {
     >
       <div className={`max-w-[1920px] w-full flex flex-col items-center z-10`}>
         <div className='flex justify-center max-w-6xl lg:max-w-[1920px] w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10'>
-          <article className='h-[460px] md:h-[480px] lg:h-[600px] xl:h-[680px] relative w-full flex flex-col items-center justify-center md:min-w-[430px] lg:min-w-[540px] z-20 px-4 md:px-8 lg:px-12'>
+          <article className='pt-10 pb-32 sm:pb-40 sm:pt-12 md:pt-24 lg:pt-36 lg:pb-48 relative w-full flex flex-col items-center lg:justify-center md:min-w-[430px] lg:min-w-[540px] z-20 px-4 md:px-8 lg:px-12'>
             <HeroCarousel />
             <div
               className={`absolute w-full h-full top-0 -right-0 bg-black/70 md:bg-black/80 -z-20`}
@@ -25,7 +26,7 @@ const HeroHome = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.5 }}
                 className='mb-4 md:mb-6'
               >
                 <h2 className='text-[28px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-nowrap'>
@@ -43,7 +44,7 @@ const HeroHome = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 className='text-lg md:text-xl lg:text-2xl text-white mb-6 md:mb-8 leading-relaxed max-w-lg md:max-w-xl lg:max-w-2xl bg-color-primary/20 p-3 relative'
               >
                 <p>
@@ -57,7 +58,7 @@ const HeroHome = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 className='flex flex-col sm:flex-row gap-4 md:gap-6'
               >
                 {/* Botón primario */}
@@ -111,6 +112,37 @@ const HeroHome = () => {
                 </Link>
               </motion.div>
             </div>
+
+            {/* Banner del escáner - Centrado en mobile, derecha en desktop */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className='absolute bottom-4 sm:bottom-8 md:bottom-6 lg:bottom-8 left-0 right-0 flex justify-center md:left-auto md:right-6 md:justify-end lg:right-8 z-30'
+            >
+              <Link
+                href='/escaner'
+                className='group flex items-center gap-3 md:gap-3 bg-black/80 hover:bg-black/90 backdrop-blur-sm border border-color-primary/50 hover:border-color-primary rounded-lg py-1 px-2 md:py-2 md:px-3 shadow-lg transition-all duration-300'
+              >
+                <div className='relative w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex-shrink-0'>
+                  <Image
+                    src='/assets/inicio/escaner.webp'
+                    alt='Escáner Autel MaxiCheck MX808S'
+                    fill
+                    className='object-contain'
+                    sizes='(max-width: 768px) 48px, 64px'
+                  />
+                </div>
+                <div className='flex flex-col'>
+                  <span className='text-white text-lg lg:text-xl font-semibold leading-tight group-hover:text-color-primary transition-colors'>
+                    Verificá el
+                  </span>
+                  <span className='text-color-primary text-lg lg:text-xl font-bold leading-tight group-hover:text-color-primary-light transition-colors'>
+                    kilometraje real
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
           </article>
         </div>
       </div>
