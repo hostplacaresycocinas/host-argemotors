@@ -118,7 +118,7 @@ const HeroHome = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className='absolute bottom-4 sm:bottom-8 md:bottom-6 lg:bottom-8 left-0 right-0 flex justify-center md:left-auto md:right-6 md:justify-end lg:right-8 z-30'
+              className='absolute bottom-4 sm:bottom-8 md:bottom-6 lg:bottom-8 left-0 right-0 flex justify-center md:left-auto md:right-6 md:justify-end lg:right-20 z-30'
             >
               <Link
                 href='/escaner'
