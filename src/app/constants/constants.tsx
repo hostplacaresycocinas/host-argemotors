@@ -22,6 +22,28 @@ export const company = {
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
 
+export const sedes = [
+  {
+    id: 1,
+    name: 'ArgeMotors Villa Del Parque',
+    adress: 'Av. Nazca 1487',
+    city: 'Villa Del Parque',
+    image: '/assets/sedes/sede-1.webp',
+    schedule: ['Lunes a Viernes 09:00 a 18:00hs', 'Sábado 09:00 a 13:00hs'],
+    googlemapsLink: 'https://maps.app.goo.gl/AiMtsEh1rLktqdCaA',
+  },
+  {
+    id: 2,
+    name: 'ArgeMotors San Fernando',
+    adress: 'Av. Hipólito Yrigoyen (Ruta 202) N° 2135',
+    city: 'San Fernando',
+    image: '/assets/sedes/sede-2.webp',
+    schedule: ['Lunes a Viernes 09:00 a 18:00hs', 'Sábado 09:00 a 13:00hs'],
+    googlemapsLink:
+      'https://www.google.com/maps/search/?api=1&query=Av.+Hip%C3%B3lito+Yrigoyen+2135+San+Fernando',
+  },
+];
+
 export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'null';
 export const TENANT_PUBLIC = 'null';

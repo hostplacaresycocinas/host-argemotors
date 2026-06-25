@@ -1,6 +1,6 @@
 'use client';
 
-import { company } from '@/app/constants/constants';
+import { company, sedes } from '@/app/constants/constants';
 import InstagramIcon from '@/components/icons/InstagramIcon';
 import WhatsappFillIcon from '@/components/icons/WhatsappFillIcon';
 
@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
-import PhoneIcon from '@/components/icons/PhoneIcon';
+import Link from 'next/link';
 import FacebookIcon from '@/components/icons/FacebookIcon';
 import LocationIcon from '@/components/icons/LocationIcon';
 import ClockIcon from '@/components/icons/ClockIcon';
@@ -60,212 +60,171 @@ const ContactoPage = () => {
       {/* Información de contacto principal */}
       <section className='py-16 md:py-24'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
-          {/* Grid principal - Información a la izquierda, Redes a la derecha */}
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16'>
-            {/* Columna izquierda - Información de contacto */}
+          {/* Nuestros locales */}
+          <div className='mb-16'>
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className='bg-color-bg-secondary backdrop-blur-sm rounded-2xl p-8 border border-neutral-800'
+              className='flex items-center gap-3 mb-8'
             >
-              {/* Ubicación */}
-              <div className='flex items-center gap-3 mb-6'>
-                <div className='w-12 h-12 bg-color-primary rounded-lg flex items-center justify-center flex-shrink-0'>
-                  <LocationIcon
-                    className={`w-6 h-6 ${
-                      company.dark
-                        ? 'text-color-title-light'
-                        : 'text-color-title'
-                    }`}
-                  />
-                </div>
-                <h3 className='text-xl font-bold text-color-title-light'>
-                  Ubicación
-                </h3>
-              </div>
-              <div className='text-color-text-light block mb-8'>
-                {company.adress}, {company.city}
-              </div>
-
-              {/* Línea divisoria */}
-              <div className='w-full h-[0.5px] bg-color-primary mb-8'></div>
-
-              {/* Contacto */}
-              <div className='flex items-center gap-3 mb-6'>
-                <div className='w-12 h-12 bg-color-primary rounded-lg flex items-center justify-center flex-shrink-0'>
-                  <PhoneIcon
-                    className={`w-6 h-6 ${
-                      company.dark
-                        ? 'text-color-title-light'
-                        : 'text-color-title'
-                    }`}
-                  />
-                </div>
-                <h3 className='text-xl font-bold text-color-title-light'>
-                  Contacto
-                </h3>
-              </div>
-              <div className='space-y-3 mb-8'>
-                <a
-                  href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-color-text-light hover:text-color-primary-light transition-colors block'
-                >
-                  {company.whatsapp[0]}
-                </a>
-                <a
-                  href={`https://www.instagram.com/${company.instagram}/`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-color-text-light hover:text-color-primary-light transition-colors block'
-                >
-                  @{company.instagram}
-                </a>
-              </div>
-
-              {/* Línea divisoria */}
-              <div className='w-full h-[0.5px] bg-color-primary mb-8'></div>
-
-              {/* Horarios */}
-              <div className='flex items-center gap-3 mb-6'>
-                <div className='w-12 h-12 bg-color-primary rounded-lg flex items-center justify-center flex-shrink-0'>
-                  <ClockIcon
-                    className={`w-6 h-6 ${
-                      company.dark
-                        ? 'text-color-title-light'
-                        : 'text-color-title'
-                    }`}
-                  />
-                </div>
-                <h3 className='text-xl font-bold text-color-title-light'>
-                  Horarios
-                </h3>
-              </div>
-              <div className='space-y-2'>
-                {company.openDays.map((day, index) => (
-                  <div key={index} className='text-color-text-light'>
-                    <span className='font-medium'>{day}</span>
-                  </div>
-                ))}
-              </div>
+              <div className='w-1 h-6 bg-color-primary rounded'></div>
+              <h2 className='text-2xl md:text-3xl font-bold text-color-title-light'>
+                Nuestros locales
+              </h2>
             </motion.div>
 
-            {/* Columna derecha - Redes sociales */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className='space-y-6'
-            >
-              {/* WhatsApp */}
-              <a
-                href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='block'
-              >
-                <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
-                  <div className='flex justify-center mb-4'>
-                    <WhatsappFillIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
-                  </div>
-                  <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
-                    WhatsApp
-                  </h3>
-                  <p className=' text-color-text-light text-sm lg:text-base'>
-                    Chatea con nosotros
-                  </p>
-                </div>
-              </a>
-
-              {/* Instagram */}
-              <a
-                href={`https://www.instagram.com/${company.instagram}/`}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='block'
-              >
-                <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
-                  <div className='flex justify-center mb-4'>
-                    <InstagramIcon className='w-11 h-11 group-hover:text-color-primary-dark transition-colors text-color-primary' />
-                  </div>
-                  <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
-                    Instagram
-                  </h3>
-                  <p className=' text-color-text-light text-sm lg:text-base'>
-                    @{company.instagram}
-                  </p>
-                </div>
-              </a>
-
-              {/* Facebook */}
-              {company.facebook ? (
-                <a
-                  href={`${company.facebook}`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='block'
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8'>
+              {sedes.map((sede, index) => (
+                <motion.div
+                  key={sede.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
-                    <div className='flex justify-center mb-4'>
-                      <FacebookIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                  <Link
+                    href={sede.googlemapsLink}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='block group relative h-72 sm:h-80 lg:h-96 rounded-2xl overflow-hidden border border-neutral-800 shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)]'
+                  >
+                    {/* Foto del local */}
+                    <Image
+                      src={sede.image}
+                      alt={sede.name}
+                      fill
+                      className='object-cover transition-transform duration-700 group-hover:scale-105'
+                    />
+
+                    {/* Gradiente por encima */}
+                    <div className='absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10'></div>
+
+                    {/* Información sobre la foto */}
+                    <div className='absolute inset-x-0 bottom-0 p-5 sm:p-7'>
+                      <h3 className='text-color-title-light text-xl sm:text-2xl font-bold mb-3'>
+                        {sede.name}
+                      </h3>
+                      <div className='flex items-start gap-2 mb-2'>
+                        <LocationIcon
+                          className={`w-5 h-5 shrink-0 mt-0.5 ${
+                            company.secondaryColor
+                              ? 'text-color-secondary-light'
+                              : 'text-color-primary-light'
+                          }`}
+                        />
+                        <p className='text-color-text-light'>{sede.adress}</p>
+                      </div>
+                      <div className='flex items-start gap-2'>
+                        <ClockIcon
+                          className={`w-5 h-5 shrink-0 mt-0.5 ${
+                            company.secondaryColor
+                              ? 'text-color-secondary-light'
+                              : 'text-color-primary-light'
+                          }`}
+                        />
+                        <div className='text-color-text-light flex flex-col'>
+                          {sede.schedule.map((horario) => (
+                            <span key={horario}>{horario}</span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
-                      Facebook
-                    </h3>
-                    <p className=' text-color-text-light text-sm lg:text-base'>
-                      Seguinos en Facebook
-                    </p>
-                  </div>
-                </a>
-              ) : (
-                <a
-                  href={`mailto:${company.email}`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='block'
-                >
-                  <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800'>
-                    <div className='flex justify-center mb-4'>
-                      <EmailFillIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
-                    </div>
-                    <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
-                      Email
-                    </h3>
-                    <p className=' text-color-text-light text-sm lg:text-base'>
-                      Envíanos un email
-                    </p>
-                  </div>
-                </a>
-              )}
-            </motion.div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          {/* Mapa */}
+          {/* Redes sociales */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className='bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10'
+            className='grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16'
           >
-            <div className='relative'>
-              <iframe
-                className='w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem]'
-                src={`${company.googlemaps}`}
-                width='100%'
-                height='400'
-                loading='lazy'
-                referrerPolicy='no-referrer-when-downgrade'
-                style={{
-                  minWidth: '450px',
-                  border: 'none',
-                }}
-              ></iframe>
-            </div>
+            {/* WhatsApp */}
+            <a
+              href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='block'
+            >
+              <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800 h-full'>
+                <div className='flex justify-center mb-4'>
+                  <WhatsappFillIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                </div>
+                <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                  WhatsApp
+                </h3>
+                <p className=' text-color-text-light text-sm lg:text-base'>
+                  Chatea con nosotros
+                </p>
+              </div>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href={`https://www.instagram.com/${company.instagram}/`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='block'
+            >
+              <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800 h-full'>
+                <div className='flex justify-center mb-4'>
+                  <InstagramIcon className='w-11 h-11 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                </div>
+                <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                  Instagram
+                </h3>
+                <p className=' text-color-text-light text-sm lg:text-base'>
+                  @{company.instagram}
+                </p>
+              </div>
+            </a>
+
+            {/* Facebook */}
+            {company.facebook ? (
+              <a
+                href={`${company.facebook}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='block'
+              >
+                <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800 h-full'>
+                  <div className='flex justify-center mb-4'>
+                    <FacebookIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                  </div>
+                  <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                    Facebook
+                  </h3>
+                  <p className=' text-color-text-light text-sm lg:text-base'>
+                    Seguinos en Facebook
+                  </p>
+                </div>
+              </a>
+            ) : (
+              <a
+                href={`mailto:${company.email}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='block'
+              >
+                <div className='group bg-color-bg-secondary flex flex-col items-center backdrop-blur-sm rounded-2xl p-6 border border-neutral-800 h-full'>
+                  <div className='flex justify-center mb-4'>
+                    <EmailFillIcon className='w-12 h-12 group-hover:text-color-primary-dark transition-colors text-color-primary' />
+                  </div>
+                  <h3 className='group-hover:text-color-primary-light transition-colors text-color-title-light font-bold text-lg lg:text-xl mb-2'>
+                    Email
+                  </h3>
+                  <p className=' text-color-text-light text-sm lg:text-base'>
+                    Envíanos un email
+                  </p>
+                </div>
+              </a>
+            )}
           </motion.div>
         </div>
       </section>

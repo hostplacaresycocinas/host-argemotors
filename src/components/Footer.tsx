@@ -1,6 +1,6 @@
 'use client';
 
-import { navigation } from '@/app/constants/constants';
+import { navigation, sedes } from '@/app/constants/constants';
 import { company } from '@/app/constants/constants';
 
 import Image from 'next/image';
@@ -85,23 +85,23 @@ const Footer = () => {
                 <div className='absolute -bottom-2 left-1/2 md:left-0 transform md:transform-none -translate-x-1/2 w-16 h-0.5 bg-color-primary rounded-full'></div>
               </h3>
               <div className='space-y-6 flex flex-col items-center md:items-start'>
-                {/* Dirección */}
-                {(company.adress || company.city) && (
+                {/* Direcciones */}
+                {sedes.map((sede) => (
                   <Link
-                    href={`${company.googlemapsLink}`}
+                    key={sede.id}
+                    href={`${sede.googlemapsLink}`}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='flex items-center gap-2 group'
                   >
-                    <div className='w-12 h-12 rounded-full bg-color-primary/20 flex items-center justify-center group-hover:bg-color-primary/30 transition-colors'>
+                    <div className='w-12 h-12 rounded-full bg-color-primary/20 flex items-center justify-center group-hover:bg-color-primary/30 transition-colors flex-shrink-0'>
                       <LocationIcon className='w-6 h-6 text-color-primary group-hover:text-color-primary-light transition-colors' />
                     </div>
                     <span className='text-color-text-light text-base leading-relaxed group-hover:text-color-primary transition-colors'>
-                      {company.adress && `${company.adress}, `}
-                      {company.city && `${company.city}`}
+                      {sede.adress}, {sede.city}
                     </span>
                   </Link>
-                )}
+                ))}
 
                 {/* WhatsApp */}
                 {company.whatsapp &&
