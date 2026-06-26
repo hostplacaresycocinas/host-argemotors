@@ -38,7 +38,7 @@ export const sedes = [
     adress: 'Av. Hipólito Yrigoyen (Ruta 202) N° 2135',
     city: 'San Fernando',
     image: '/assets/sedes/sede-2.webp',
-    schedule: ['Lunes a Viernes 09:00 a 18:00hs', 'Sábado 09:00 a 13:00hs'],
+    schedule: ['Lunes a Viernes 09:30 a 19:00hs', 'Sábado 10:00 a 17:00hs'],
     googlemapsLink:
       'https://www.google.com/maps/search/?api=1&query=Av.+Hip%C3%B3lito+Yrigoyen+2135+San+Fernando',
   },
